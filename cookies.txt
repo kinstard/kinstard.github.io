@@ -1,0 +1,7 @@
+# HTTrack Website Copier Cookie File
+# This file format is compatible with Netscape cookies
+www.asanko.com	TRUE	/	FALSE	1999999999	bpazaws52gukakzc__ctrl0_ctl51_uccaptcha	AVXj0pGAIouAJNDx50Nhx+odJ4e9fmuv+A5wZK+4SIkvUbZi8RDmvNYzb8RxJqW05tz6PenviPm03vkSYNKRoQ==
+www.asanko.com	TRUE	/	FALSE	1999999999	bpazaws52gukakzc__ctrl0_ctl66_uccaptcha	lWmXJqKX/H/Tc6kYwjp70q+J+uI8YB7ZqZlw3CYCG7Hop2UxznRzH7/dVt8/PmKGHaB46Pw1yztdMHntI+D4Ww==
+www.asanko.com	TRUE	/	FALSE	1999999999	bpazaws52gukakzc__ctrl0_ctl96_uccaptcha	3XM4wDizmGqiwOJSXGizkFfemiMo/OkROl3AlOn531++2Xob2UeAxfJSsQeeCReMhEZYoE8dHtS2UpF81366hw==
+www.asanko.com	TRUE	/	FALSE	1999999999	SameSite	strict
+

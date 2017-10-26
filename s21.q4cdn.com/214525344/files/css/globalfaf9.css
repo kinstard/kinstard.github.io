@@ -1,0 +1,7628 @@
+/*-----------------------------------------*\
+------------------ Default ------------------
+\*-----------------------------------------*/
+
+/*--------------- Reset CSS ---------------*/
+
+html, body, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, blockquote, pre,
+abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center, dl, dt, dd,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video
+/* div, p, a, ol, ul, li, span */ {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+
+html {
+    box-sizing: border-box;
+    -moz-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+/* Negative Margin Fix for Toast Columns */
+html, .col {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 26px;
+}
+
+ol, ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+blockquote, q {
+    quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+strong {
+    font-weight: 700;
+}
+
+em {
+    font-style: italic;
+}
+/* Preview Override */
+body.PreviewBody {
+    color: #333;
+    font-size: 16px;
+    margin: 0;
+    background-position: 0 0;
+}
+
+.PreviewToolBar {
+    display: none;
+}
+
+.accSkipLink {
+    display: none;
+}
+
+.hidden {
+    display: none !important;
+}
+
+pre {
+    padding: 10px;
+    background: #fafafa;
+    font: 12px/18px Consolas,monospace,serif;
+    color: #444;
+    -moz-tab-size: 4;
+    tab-size: 4;
+    overflow: auto;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    white-space: pre-wrap;
+}
+/*-----------------------------------------*\
+--------------- Accessibility ---------------
+\*-----------------------------------------*/
+
+/*------------ Default Styles -------------*/
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    border: 0;
+}
+
+/*--- Accessibility Skip Navigation Link --*/
+
+.accSkipLink a {
+    position: absolute;
+    top: -40px;
+    left: 50%;
+    width: 200px;
+    padding: 15px 15px;
+    margin-left: -100px;
+    background: transparent;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    color: white;
+    text-align: center;
+    -webkit-transition: 0.5s ease-in-out;
+    transition: 0.5s ease-in-out;
+    z-index: 100;
+}
+
+.accSkipLink a:focus,
+.accSkipLink a:active,
+.accSkipLink a:hover {
+    top: 0;
+    background: #0A457B;
+    outline: 0;
+}
+
+.accSkipLink a:visited {
+    color: #fff;
+}
+
+#maincontent:focus {
+    outline: 0px;
+}
+
+button, input[type="text"], select, textarea {
+    -webkit-appearance: none; /*Safari/Chrome*/
+    -moz-appearance: none; /*Firefox*/
+    -ms-appearance: none; /*IE*/
+    -o-appearance: none; /*Opera*/
+    appearance: none;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    font-size: 100%;
+    margin: 0;
+    outline: medium none;
+    vertical-align: middle;
+}
+
+.ActionButton[type="submit"],
+.SubmitButton[type="submit"] {
+    background-color: #004d7e;
+    border: 0 none;
+    color: #fff;
+    cursor: pointer;
+    padding: 5px 12px;
+}
+
+.ActionButton[type="submit"]:focus,
+.MailingListUnsubscribeContainer input[type="submit"]:focus,
+.subscribe-button-section .subscribe-button.focus {
+    background-color: #35b3ee;
+}
+
+.ActionButton[type="submit"]:hover,
+.subscribe-button-section .subscribe-button:hover {
+    background-color: #003455;
+}
+
+/*-----------------------------------------*\
+------------------- Tools -------------------
+\*-----------------------------------------*/
+
+/*--------------- Toast CSS ---------------*/
+
+/* The Important Bits */
+
+/* Negative Margin Fix */
+.grid, .grid-no-gutter {
+    font-size: 0;
+}
+
+.grid {
+    list-style: none;
+    margin-left: -20px;
+}
+
+main.grid {
+    margin-left: 0;
+}
+
+.grid-no-gutter {
+    margin-left: 0;
+    width: 100%;
+}
+
+.col {
+    box-sizing: border-box;
+    display: inline-block;
+    /* Negative Margin Fix */
+    margin-right: -.25em;
+    min-height: 1px;
+    padding-left: 20px;
+    vertical-align: top;
+}
+
+.grid-no-gutter .col {
+    padding-left: 0;
+}
+
+/* The Column Widths */
+
+.col-1-of-1, .col-2-of-2, .col-3-of-3, .col-4-of-4, .col-5-of-5, .col-6-of-6, .col-8-of-8, .col-12-of-12 {
+    width: 100%;
+}
+
+.col-1-of-2, .col-2-of-4, .col-3-of-6, .col-4-of-8, .col-6-of-12 {
+    width: 50%;
+}
+
+.col-1-of-3, .col-2-of-6, .col-4-of-12 {
+    width: 33.33333%;
+}
+
+.col-2-of-3, .col-4-of-6, .col-8-of-12 {
+    width: 66.66667%;
+}
+
+.col-1-of-4, .col-2-of-8, .col-3-of-12 {
+    width: 25%;
+}
+
+.col-3-of-4, .col-6-of-8, .col-9-of-12 {
+    width: 75%;
+}
+
+.col-push-2-of-2, .col-push-3-of-3, .col-push-4-of-4, .col-push-5-of-5, .col-push-6-of-6, .col-push-8-of-8, .col-push-12-of-12 {
+    margin-left: 100%;
+}
+
+.col-push-1-of-2, .col-push-2-of-4, .col-push-3-of-6, .col-push-4-of-8, .col-push-6-of-12 {
+    margin-left: 50%;
+}
+
+.col-push-1-of-3, .col-push-2-of-6, .col-push-4-of-12 {
+    margin-left: 33.33333%;
+}
+
+.col-push-2-of-3, .col-push-4-of-6, .col-push-8-of-12 {
+    margin-left: 66.66667%;
+}
+
+.col-push-1-of-4, .col-push-2-of-8, .col-push-3-of-12 {
+    margin-left: 25%;
+}
+
+.col-push-3-of-4, .col-push-6-of-8, .col-push-9-of-12 {
+    margin-left: 75%;
+}
+
+.col-pull-2-of-2, .col-pull-3-of-3, .col-pull-4-of-4, .col-pull-5-of-5, .col-pull-6-of-6, .col-pull-8-of-8, .col-pull-12-of-12 {
+    margin-left: -100%;
+}
+
+.col-pull-1-of-2, .col-pull-2-of-4, .col-pull-3-of-6, .col-pull-4-of-8, .col-pull-6-of-12 {
+    margin-left: -50%;
+}
+
+.col-pull-1-of-3, .col-pull-2-of-6, .col-pull-4-of-12 {
+    margin-left: -33.33333%;
+}
+
+.col-pull-2-of-3, .col-pull-4-of-6, .col-pull-8-of-12 {
+    margin-left: -66.66667%;
+}
+
+.col-pull-1-of-4, .col-pull-2-of-8, .col-pull-3-of-12 {
+    margin-left: -25%;
+}
+
+.col-pull-3-of-4, .col-pull-6-of-8, .col-pull-9-of-12 {
+    margin-left: -75%;
+}
+
+.col-1-of-5 {
+    width: 20%;
+}
+
+.col-push-1-of-5 {
+    margin-left: 20%;
+}
+
+.col-pull-1-of-5 {
+    margin-left: -20%;
+}
+
+.col-2-of-5 {
+    width: 40%;
+}
+
+.col-push-2-of-5 {
+    margin-left: 40%;
+}
+
+.col-pull-2-of-5 {
+    margin-left: -40%;
+}
+
+.col-3-of-5 {
+    width: 60%;
+}
+
+.col-push-3-of-5 {
+    margin-left: 60%;
+}
+
+.col-pull-3-of-5 {
+    margin-left: -60%;
+}
+
+.col-4-of-5 {
+    width: 80%;
+}
+
+.col-push-4-of-5 {
+    margin-left: 80%;
+}
+
+.col-pull-4-of-5 {
+    margin-left: -80%;
+}
+
+.col-1-of-6 {
+    width: 16.66667%;
+}
+
+.col-push-1-of-6 {
+    margin-left: 16.66667%;
+}
+
+.col-pull-1-of-6 {
+    margin-left: -16.66667%;
+}
+
+.col-5-of-6 {
+    width: 83.33333%;
+}
+
+.col-push-5-of-6 {
+    margin-left: 83.33333%;
+}
+
+.col-pull-5-of-6 {
+    margin-left: -83.33333%;
+}
+
+.col-1-of-8 {
+    width: 12.5%;
+}
+
+.col-push-1-of-8 {
+    margin-left: 12.5%;
+}
+
+.col-pull-1-of-8 {
+    margin-left: -12.5%;
+}
+
+.col-3-of-8 {
+    width: 37.5%;
+}
+
+.col-push-3-of-8 {
+    margin-left: 37.5%;
+}
+
+.col-pull-3-of-8 {
+    margin-left: -37.5%;
+}
+
+.col-5-of-8 {
+    width: 62.5%;
+}
+
+.col-push-5-of-8 {
+    margin-left: 62.5%;
+}
+
+.col-pull-5-of-8 {
+    margin-left: -62.5%;
+}
+
+.col-7-of-8 {
+    width: 87.5%;
+}
+
+.col-push-7-of-8 {
+    margin-left: 87.5%;
+}
+
+.col-pull-7-of-8 {
+    margin-left: -87.5%;
+}
+
+.col-1-of-12 {
+    width: 8.33333%;
+}
+
+.col-push-1-of-12 {
+    margin-left: 8.33333%;
+}
+
+.col-pull-1-of-12 {
+    margin-left: -8.33333%;
+}
+
+.col-2-of-12 {
+    width: 16.66667%;
+}
+
+.col-push-2-of-12 {
+    margin-left: 16.66667%;
+}
+
+.col-pull-2-of-12 {
+    margin-left: -16.66667%;
+}
+
+.col-5-of-12 {
+    width: 41.66667%;
+}
+
+.col-push-5-of-12 {
+    margin-left: 41.66667%;
+}
+
+.col-pull-5-of-12 {
+    margin-left: -41.66667%;
+}
+
+.col-7-of-12 {
+    width: 58.33333%;
+}
+
+.col-push-7-of-12 {
+    margin-left: 58.33333%;
+}
+
+.col-pull-7-of-12 {
+    margin-left: -58.33333%;
+}
+
+.col-10-of-12 {
+    width: 83.33333%;
+}
+
+.col-push-10-of-12 {
+    margin-left: 83.33333%;
+}
+
+.col-pull-10-of-12 {
+    margin-left: -83.33333%;
+}
+
+.col-11-of-12 {
+    width: 91.66667%;
+}
+
+.col-push-11-of-12 {
+    margin-left: 91.66667%;
+}
+
+.col-pull-11-of-12 {
+    margin-left: -91.66667%;
+}
+
+@media (max-width: 480px) {
+    .col {
+        display: block;
+        margin-left: 0;
+        margin-right: 0;
+        width: auto;
+    }
+}
+
+@media (max-width: 1200px) and (min-width: 1024px) {
+    .col.col-lg-1-of-1 {
+        width: 100%;
+    }
+
+    .col.col-lg-1-of-2, .col.col-lg-2-of-4 {
+        width: 50%;
+    }
+
+    .col.col-lg-1-of-3 {
+        width: 33.33333%;
+    }
+
+    .col.col-lg-2-of-3 {
+        width: 66.66667%;
+    }
+
+    .col.col-lg-1-of-4 {
+        width: 25%;
+    }
+
+    .col.col-lg-3-of-4 {
+        width: 75%;
+    }
+}
+
+@media (max-width: 1024px) and (min-width: 768px) {
+    .col.col-lc-1-of-1 {
+        width: 100%;
+    }
+
+    .col.col-lc-1-of-2, .col.col-lc-2-of-4 {
+        width: 50%;
+    }
+
+    .col.col-lc-1-of-3 {
+        width: 33.33333%;
+    }
+
+    .col.col-lc-2-of-3 {
+        width: 66.66667%;
+    }
+
+    .col.col-lc-1-of-4 {
+        width: 25%;
+    }
+
+    .col.col-lc-3-of-4 {
+        width: 75%;
+    }
+}
+
+@media (max-width: 768px) and (min-width: 480px) {
+    .col.col-md-1-of-1 {
+        width: 100%;
+    }
+
+    .col.col-md-1-of-2, .col.col-md-2-of-4 {
+        width: 50%;
+    }
+
+    .col.col-md-1-of-3 {
+        width: 33.33333%;
+    }
+
+    .col.col-md-2-of-3 {
+        width: 66.66667%;
+    }
+
+    .col.col-md-1-of-4 {
+        width: 25%;
+    }
+
+    .col.col-md-3-of-4 {
+        width: 75%;
+    }
+}
+
+@media (max-width: 480px) {
+    .col.col-sm-1-of-1 {
+        width: 100%;
+    }
+
+    .col.col-sm-1-of-2, .col.col-sm-2-of-4 {
+        width: 50%;
+    }
+
+    .col.col-sm-1-of-3 {
+        width: 33.33333%;
+    }
+
+    .col.col-sm-2-of-3 {
+        width: 66.66667%;
+    }
+
+    .col.col-sm-1-of-4 {
+        width: 25%;
+    }
+
+    .col.col-sm-3-of-4 {
+        width: 75%;
+    }
+}
+
+.col-centered {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.col-d-first {
+    float: left;
+}
+
+.col-d-last {
+    float: right;
+}
+
+.grid-no-gutter .col-span-all {
+    margin-left: 0;
+    width: 100%;
+}
+
+.col-ab {
+    vertical-align: bottom;
+}
+
+.col-am {
+    vertical-align: middle;
+}
+
+/*------------- Slick Slider --------------*/
+
+.slick-slider {
+    position: relative;
+    display: block;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-user-select: text;
+    -moz-user-select: text;
+    -ms-user-select: text;
+    user-select: text;
+    -webkit-touch-callout: none;
+    -khtml-user-select: text;
+    -ms-touch-action: pan-y;
+    touch-action: pan-y;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.slick-list {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+.slick-list:focus {
+    outline: none;
+}
+
+.slick-list.dragging {
+    cursor: pointer;
+    cursor: hand;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.slick-slider .slick-track,
+.slick-slider .slick-list {
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    -o-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+}
+
+.slick-track {
+    position: relative;
+    top: 0;
+    left: 0;
+    display: block;
+}
+
+.slick-track:before,
+.slick-track:after {
+    display: table;
+    content: '';
+}
+
+.slick-track:after {
+    clear: both;
+}
+
+.slick-loading .slick-track {
+    visibility: hidden;
+}
+
+.slick-slide {
+    display: none;
+    float: left;
+    height: 100%;
+    min-height: 1px;
+}
+
+[dir='rtl'] .slick-slide {
+    float: right;
+}
+
+.slick-slide img {
+    display: block;
+}
+
+.slick-slide.slick-loading img {
+    display: none;
+}
+
+.slick-slide.dragging img {
+    pointer-events: none;
+}
+
+.slick-initialized .slick-slide {
+    display: block;
+}
+
+.slick-loading .slick-slide {
+    visibility: hidden;
+}
+
+.slick-vertical .slick-slide {
+    display: block;
+    height: auto;
+    border: 1px solid transparent;
+}
+
+.slick-arrow.slick-hidden {
+    display: none;
+}
+
+.slick-prev,
+.slick-next {
+    position: absolute;
+    display: block;
+    height: 60px;
+    width: 60px;
+    line-height: 0px;
+    font-size: 0px;
+    cursor: pointer;
+    background: transparent;
+    color: transparent;
+    top: 50%;
+    margin-top: -10px\9;
+    /*lte IE 8*/
+    -webkit-transform: translate(0, -50%);
+    -ms-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+    padding: 0;
+    border: none;
+    outline: none;
+}
+
+.slick-prev:hover, .slick-prev:focus,
+.slick-next:hover,
+.slick-next:focus {
+    outline: none;
+    background: transparent;
+    color: transparent;
+}
+
+.slick-prev:hover:before,
+.slick-next:hover:before {
+    opacity: 0.8;
+}
+
+.slick-prev.slick-disabled:before,
+.slick-next.slick-disabled:before {
+    opacity: 0.5;
+}
+
+.slick-prev:before, .slick-next:before {
+    font-family: 'FontAwesome';
+    font-size: 60px;
+    line-height: 1;
+    color: #FFF;
+    opacity: 0.5;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.slick-prev {
+    right: auto;
+    z-index: 1;
+}
+
+[dir="rtl"] .slick-prev {
+    left: auto;
+    right: -25px;
+}
+
+.slick-prev:before,
+[dir="rtl"] .slick-prev:before {
+    content: "\f104";
+}
+
+.slick-next {
+    right: 0;
+}
+
+[dir="rtl"] .slick-next {
+    left: -25px;
+    right: auto;
+}
+
+.slick-next:before,
+[dir="rtl"] .slick-next:before {
+    content: "\f105";
+}
+
+.slick-dots {
+    bottom: 50px;
+    display: block;
+    list-style: outside none none;
+    padding: 0;
+    position: absolute;
+    right: 9%;
+    text-align: right;
+    width: 100%;
+    z-index: 1001;
+}
+
+.slick-dots li {
+    position: relative;
+    display: inline-block;
+    height: 20px;
+    width: 20px;
+    margin: 0 8px;
+    padding: 0;
+    cursor: pointer;
+}
+
+.slick-dots li button {
+    border: 0;
+    background: transparent;
+    display: block;
+    height: 20px;
+    width: 20px;
+    outline: none;
+    line-height: 0px;
+    font-size: 0px;
+    color: transparent;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.slick-dots li button:hover, .slick-dots li button:focus {
+    outline: none;
+}
+
+.slick-dots li button:hover:before, .slick-dots li button:focus:before {
+    opacity: 1;
+}
+
+.slick-dots li button:before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: "\e907";
+    width: 20px;
+    height: 20px;
+    font-family: 'q4icons';
+    font-size: 6px;
+    line-height: 20px;
+    text-align: center;
+    color: black;
+    opacity: 0.25;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.slick-dots li.slick-active button:before {
+    color: black;
+    opacity: 0.75;
+}
+
+/*--------------- FancyBox  ---------------*/
+
+.fancybox-wrap,
+.fancybox-skin,
+.fancybox-outer,
+.fancybox-inner,
+.fancybox-image,
+.fancybox-wrap iframe,
+.fancybox-wrap object,
+.fancybox-nav,
+.fancybox-nav span,
+.fancybox-tmp {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    outline: none;
+    vertical-align: top;
+}
+
+.fancybox-wrap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 8020;
+}
+
+.fancybox-skin {
+    position: relative;
+    background: #f9f9f9;
+    color: #444;
+    text-shadow: none;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+}
+
+.fancybox-opened {
+    z-index: 8030;
+}
+
+.fancybox-opened .fancybox-skin {
+    -webkit-box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+}
+
+.fancybox-outer, .fancybox-inner {
+    position: relative;
+}
+
+.fancybox-inner {
+    overflow: hidden;
+}
+
+.fancybox-type-iframe .fancybox-inner {
+    -webkit-overflow-scrolling: touch;
+}
+
+.fancybox-error {
+    color: #444;
+    font: 14px/20px "Helvetica Neue",Helvetica,Arial,sans-serif;
+    margin: 0;
+    padding: 15px;
+    white-space: nowrap;
+}
+
+.fancybox-image, .fancybox-iframe {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.fancybox-image {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+#fancybox-loading, .fancybox-close, .fancybox-prev span, .fancybox-next span {
+    background-image: url('../design/fancybox_sprite.png');
+}
+
+#fancybox-loading {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-top: -22px;
+    margin-left: -22px;
+    background-position: 0 -108px;
+    opacity: 0.8;
+    cursor: pointer;
+    z-index: 8060;
+}
+
+#fancybox-loading div {
+    width: 44px;
+    height: 44px;
+    background: url('../design/fancybox_loading.gif') center center no-repeat;
+}
+
+.fancybox-close {
+    position: absolute;
+    top: -18px;
+    right: -18px;
+    width: 36px;
+    height: 36px;
+    cursor: pointer;
+    z-index: 8040;
+}
+
+.fancybox-nav {
+    position: absolute;
+    top: 0;
+    width: 40%;
+    height: 100%;
+    cursor: pointer;
+    text-decoration: none;
+    background: transparent url('../design/blank.gif'); /* helps IE */
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    z-index: 8040;
+}
+
+.fancybox-prev {
+    left: 0;
+}
+
+.fancybox-next {
+    right: 0;
+}
+
+.fancybox-nav span {
+    position: absolute;
+    top: 50%;
+    width: 36px;
+    height: 34px;
+    margin-top: -18px;
+    cursor: pointer;
+    z-index: 8040;
+    visibility: hidden;
+}
+
+.fancybox-prev span {
+    left: 10px;
+    background-position: 0 -36px;
+}
+
+.fancybox-next span {
+    right: 10px;
+    background-position: 0 -72px;
+}
+
+.fancybox-nav:hover span {
+    visibility: visible;
+}
+
+.fancybox-tmp {
+    position: absolute;
+    top: -99999px;
+    left: -99999px;
+    visibility: hidden;
+    max-width: 99999px;
+    max-height: 99999px;
+    overflow: visible !important;
+}
+
+/* Overlay helper */
+
+.fancybox-lock {
+    overflow: hidden !important;
+    width: auto;
+}
+
+.fancybox-lock body {
+    overflow: hidden !important;
+}
+
+.fancybox-lock-test {
+    overflow-y: hidden !important;
+}
+
+.fancybox-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    display: none;
+    z-index: 8010;
+    background: url('../design/fancybox_overlay.png');
+}
+
+.fancybox-overlay-fixed {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+}
+
+.fancybox-lock .fancybox-overlay {
+    overflow: auto;
+    overflow-y: scroll;
+}
+
+/* Title helper */
+
+.fancybox-title {
+    visibility: hidden;
+    font: normal 13px/20px "Helvetica Neue",Helvetica,Arial,sans-serif;
+    position: relative;
+    text-shadow: none;
+    z-index: 8050;
+}
+
+.fancybox-opened .fancybox-title {
+    visibility: visible;
+}
+
+.fancybox-title-float-wrap {
+    position: absolute;
+    bottom: 0;
+    right: 50%;
+    margin-bottom: -35px;
+    z-index: 8050;
+    text-align: center;
+}
+
+.fancybox-title-float-wrap .child {
+    display: inline-block;
+    margin-right: -100%;
+    padding: 2px 20px;
+    background: transparent; /* Fallback for web browsers that doesn't support RGBa */
+    background: rgba(0, 0, 0, 0.8);
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    border-radius: 15px;
+    text-shadow: 0 1px 2px #222;
+    color: #FFF;
+    font-weight: bold;
+    line-height: 24px;
+    white-space: nowrap;
+}
+
+.fancybox-title-outside-wrap {
+    position: relative;
+    margin-top: 10px;
+    color: #fff;
+}
+
+.fancybox-title-inside-wrap {
+    padding-top: 10px;
+}
+
+.fancybox-title-over-wrap {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    color: #fff;
+    padding: 10px;
+    background: #000;
+    background: rgba(0, 0, 0, .8);
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) {
+
+    #fancybox-loading, .fancybox-close, .fancybox-prev span, .fancybox-next span {
+        background-image: url('../design/fancybox_sprite%402x.png');
+        background-size: 44px 152px; /*The size of the normal image, half the size of the hi-res image*/
+    }
+
+    #fancybox-loading div {
+        background-image: url('../design/fancybox_loading%402x.gif');
+        background-size: 24px 24px; /*The size of the normal image, half the size of the hi-res image*/
+    }
+}
+
+/*--------------- SelectBox  --------------*/
+
+.sbHolder {
+    position: relative;
+    display: inline-block;
+    width: 110px;
+    height: 30px;
+    background-color: #fff;
+    border: 1px solid #004d7e;
+    vertical-align: middle;
+}
+
+.sbHolder:focus .sbSelector {
+}
+
+.sbSelector {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 80px;
+    height: 30px;
+    outline: none;
+    overflow: hidden;
+    text-indent: 10px;
+    line-height: 30px;
+}
+
+a.sbSelector, .sbOptions a {
+    color: #004d7e;
+    font-size: 16px;
+    font-weight: normal;
+}
+
+.sbSelector:visited, .sbSelector:hover {
+    color: #ddb208;
+    outline: none;
+    text-decoration: none;
+}
+
+.sbToggle {
+    background: url('../design/select-icons.png') 0 -116px no-repeat;
+    display: block;
+    height: 30px;
+    outline: none;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 30px;
+}
+
+.sbToggle:hover {
+    background: url('../design/select-icons.png') 0 -167px no-repeat;
+}
+
+.sbToggle:before {
+    content: "\f107";
+    font-family: 'FontAwesome';
+    font-size: 20px;
+    line-height: 30px;
+    color: #ddb208;
+    display: inline-block;
+    position: absolute;
+    right: 8px;
+    font-weight: bold;
+}
+
+.sbToggleOpen {
+    background: url('../design/select-icons.png') 0 -16px no-repeat;
+}
+
+.sbToggleOpen:hover {
+    background: url('../design/select-icons.png') 0 -66px no-repeat;
+}
+
+.sbHolderDisabled {
+    background-color: #3C3C3C;
+    border: solid 1px #515151;
+}
+
+.sbHolderDisabled .sbHolder {
+}
+
+.sbHolderDisabled .sbToggle {
+}
+
+.sbOptions {
+    background-color: #fff;
+    border: 1px solid rgba(0,0,0,0.1);
+    list-style: none;
+    left: -1px;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 30px;
+    width: 200px;
+    z-index: 1;
+    overflow-y: auto;
+}
+
+.sbOptions li {
+    padding: 0 7px;
+}
+
+.sbOptions a {
+    border-bottom: dotted 1px rgba(0,0,0,0.1);
+    display: block;
+    outline: none;
+    padding: 7px 0 7px 3px;
+}
+
+.sbOptions a:link, .sbOptions a:visited {
+    text-decoration: none;
+}
+
+.sbOptions a:hover,
+.sbOptions a:focus,
+.sbOptions a.sbFocus {
+    color: #EBB52D;
+}
+
+.sbOptions li.last a {
+    border-bottom: none;
+}
+
+.sbOptions .sbDisabled {
+    border-bottom: dotted 1px #515151;
+    color: #999;
+    display: block;
+    padding: 7px 0 7px 3px;
+}
+
+.sbOptions .sbGroup {
+    border-bottom: dotted 1px #515151;
+    color: #EBB52D;
+    display: block;
+    font-weight: bold;
+    padding: 7px 0 7px 3px;
+}
+
+.sbOptions .sbSub {
+    padding-left: 17px;
+}
+
+/*-----------------------------------------*\
+----------- Default Module Styling ----------
+---------------------------------------------
+------------ Alphabetical Order -------------
+\*-----------------------------------------*/
+
+/*------------- Event Modules -------------*/
+
+.ModuleEvent .ModuleYearNavContainer,
+.ModuleEvent .ModuleHeader,
+.ModuleEventLatest .ModuleYearNavContainer,
+.ModuleEventLatest .ModuleHeader {
+    margin-bottom: 10px;
+}
+
+.ModuleEvent .ModuleItemRow,
+.ModuleEventLatest .ModuleItemRow {
+    margin-bottom: 25px;
+}
+
+.ModuleEvent .ModuleHeadlineLink,
+.ModuleEvent .ModuleDateContainer span,
+.ModuleEvent .ModuleLocation,
+.ModuleEvent .ModuleSpeakers h3,
+.ModuleEventLatest .ModuleHeadlineLink,
+.ModuleEventLatest .ModuleDateContainer span,
+.ModuleEventLatest .ModuleLocation,
+.ModuleEventLatest .ModuleSpeakers h3,
+.ModuleEventDetails .ModuleDateContainer span,
+.ModuleEventDetails .ModuleLocation,
+.ModuleEventDetails .ModuleSpeakers,
+.ModuleEventDetails .ModuleSpeakers h3 {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.ModuleEvent .ModuleYearNavContainer a,
+.ModuleEvent .ModuleSpeakers li,
+.ModuleEvent .WebcastLink a,
+.ModuleEvent .PressRelease a,
+.ModuleEvent .ModuleLinks a,
+.ModuleEvent .presentation a,
+.ModuleEvent .FinancialReport a,
+.ModuleEvent .AddToCalendar,
+.ModuleEvent .ModuleMore a,
+.ModuleEventLatest .ModuleYearNavContainer a,
+.ModuleEventLatest .ModuleSpeakers li,
+.ModuleEventLatest .WebcastLink a,
+.ModuleEventLatest .PressRelease a,
+.ModuleEventLatest .ModuleLinks a,
+.ModuleEventLatest .presentation a,
+.ModuleEventLatest .FinancialReport a,
+.ModuleEventLatest .AddToCalendar,
+.ModuleEventDetails .ModuleYearNavContainer a,
+.ModuleEventDetails .ModuleSpeakers li,
+.ModuleEventDetails .WebcastLink a,
+.ModuleEventDetails .PressRelease a,
+.ModuleEventDetails .ModuleLinks a,
+.ModuleEventDetails .presentation a,
+.ModuleEventDetails .FinancialReport a,
+.ModuleEventDetails .AddToCalendar {
+    display: inline-block;
+    padding: 10px;
+    margin-bottom: 5px;
+    background-color: #e5e5e5;
+    color: #000;
+    text-decoration: none;
+}
+
+.ModuleEvent .AddToCalendar:hover,
+.ModuleEventDetails .AddToCalendar:hover {
+    background-color: #d6d6d6;
+}
+
+.ModuleEvent .ModuleBody,
+.ModuleEventLatest .ModuleBody,
+.ModuleEventDetails .ModuleBody {
+    border: 1px solid #ddd;
+    padding: 15px 10px;
+    margin: 10px 0 15px;
+}
+
+.ModuleEvent .AddToCalendar div,
+.ModuleEventLatest .AddToCalendar div,
+.ModuleEventDetails .AddToCalendar div {
+    display: inline-block;
+}
+
+.ModuleEvent .ModuleHeadlineLink,
+.ModuleEventLatest .ModuleHeadlineLink {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.ModuleEvent a[class*="q4i-"]:before,
+.ModuleEvent i[class*="q4i-"]:before,
+.ModuleEventLatest a[class*="q4i-"]:before,
+.ModuleEventLatest i[class*="q4i-"]:before,
+.ModuleEventDetails a[class*="q4i-"]:before,
+.ModuleEventDetails i[class*="q4i-"]:before {
+    margin-right: 10px;
+}
+
+.ModuleEvent h4,
+.ModuleEvent .RelatedDocuments .thumbnail,
+.ModuleEvent .category,
+.ModuleEvent .FileDetails,
+.ModuleEventLatest h4,
+.ModuleEventLatest .RelatedDocuments .thumbnail,
+.ModuleEventLatest .category,
+.ModuleEventLatest .FileDetails,
+.ModuleEventDetails h4,
+.ModuleEventDetails .RelatedDocuments .thumbnail,
+.ModuleEventDetails .category,
+.ModuleEventDetails .FileDetails {
+    display: none;
+}
+
+.ModuleEvent .AddToCalendar,
+.ModuleEventLatest .AddToCalendar,
+.ModuleEventDetails .AddToCalendar {
+    position: relative;
+}
+
+.ModuleEvent .AddToCalendar a,
+.ModuleEventLatest .AddToCalendar a,
+.ModuleEventDetails .AddToCalendar a {
+    color: #000;
+}
+
+/*------- Financial Report (Annual) -------*/
+
+.q4-annual-module .q4-acrobat-text,
+.q4-annual-module .q4-year-container,
+.q4-annual-module .q4-financial-document .FileType {
+    display: none;
+}
+
+.q4-annual-module .q4-years-container a,
+.q4-annual-module .q4-financial-document {
+    display: inline-block;
+    padding: 10px;
+    margin-bottom: 5px;
+    background-color: rgba(0,0,0,0.1);
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.q4-annual-module .q4-financial-container {
+    padding-bottom: 10px;
+    text-align: center;
+}
+
+.q4-annual-module .q4-cover-image,
+.q4-annual-module .q4-thumbnail-image,
+.q4-annual-module .q4-icon-image {
+    display: inline-block;
+    margin-bottom: 5px;
+}
+
+.q4-annual-module .q4-financial-document i[class*="q4i-"]:before {
+    margin-right: 10px;
+}
+
+/*------------- Form Builder --------------*/
+
+.FormBuilderContainer .Item {
+    margin-bottom: 10px;
+}
+
+.FormBuilderContainer input[type="text"],
+.FormBuilderContainer select {
+    width: 100%;
+}
+
+.FormBuilderContainer select {
+    border-radius: 0;
+    background-color: #fff;
+}
+
+.FormBuilderContainer .label-wrap,
+.FormBuilderContainer .field-wrap,
+.FormBuilderContainer .error-wrap {
+    display: inline-block;
+}
+
+.FormBuilderContainer .label-wrap {
+    min-width: 175px;
+}
+
+.FormBuilderContainer .field-wrap {
+    width: 270px;
+    margin-right: 10px;
+}
+
+.FormBuilderContainer .error-wrap {
+    color: red;
+    font-size: 12px;
+}
+
+.FormBuilderContainer .CaptchaContainer table tr:first-child {
+    display: none;
+}
+
+.FormBuilderContainer .CaptchaContainer table td {
+    padding-bottom: 10px;
+}
+
+.FormBuilderContainer .CaptchaContainer img {
+    width: 100%;
+}
+
+.FormBuilderContainer .CaptchaContainer span {
+    color: #FF0000;
+}
+
+/*---------------- Job List ---------------*/
+
+.JobPostingContainer table {
+    width: 100%;
+}
+
+.JobPostingContainer table td,
+.JobPostingContainer table th {
+    padding: 10px 5px;
+}
+
+.JobPostingContainer .JobPostingGridHeader {
+    background-color: rgba(0,0,0,0.1);
+}
+
+.JobPostingContainer table .JobPostingGridItem:nth-child(odd) {
+    background-color: rgba(0,0,0,0.05);
+}
+
+.Module_JobPostingDetailsAdvanced table {
+    width: 100%;
+    max-width: 500px;
+    margin-bottom: 16px;
+}
+
+.Module_JobPostingDetailsAdvanced table td:first-child span:after {
+    content: ":";
+}
+
+.Module_JobPostingDetailsAdvanced table input {
+    border: none;
+}
+
+.Module_JobPostingDetailsAdvanced .Label_Summary,
+.Module_JobPostingDetailsAdvanced .Text_Body {
+    display: inline-block;
+}
+
+.Module_JobPostingDetailsAdvanced .Label_Summary {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 0;
+}
+
+.MedWidth.Column_1 {
+    font-weight: 700;
+    text-align: right;
+}
+
+.Module_JobPostingDetailsAdvanced.Row,
+.Module_JobPostingDetailsAdvanced .Row_Alt {
+    background-color: #e5e5e5;
+}
+
+.Module_JobPostingDetailsAdvanced .LinkButton_Apply,
+.JobApplicationAdvancedContainer a {
+    background-color: #004d7e;
+    border-radius: 5px;
+    color: #fff;
+    display: inline-block;
+    margin-bottom: 5px;
+    padding: 10px;
+    text-decoration: none;
+}
+
+.Module_JobPostingDetailsAdvanced .LinkButton_Apply:hover,
+.JobApplicationAdvancedContainer a:hover {
+    background-color: #003455;
+}
+
+.JobApplicationAdvancedContainer table,
+.JobApplicationAdvancedContainer textarea {
+    width: 100%;
+}
+
+.JobApplicationAdvancedContainer table td {
+    padding: 5px 0;
+}
+
+.JobApplicationAdvancedContainer table td[colspan="4"] > span {
+    display: block;
+    padding: 10px 0;
+}
+
+.job-inner-title .Breadcrumb.global-titles {
+    color: #fff;
+    font-size: 36px;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.JobApplicationAdvancedContainer input[type="file"] {
+    line-height: 20px;
+}
+
+/*--------- Mailing List Modules ----------*/
+
+div.subscribe-text {
+    margin-bottom: 0;
+}
+
+.MailingListSignupContainer table,
+.MailingListUnsubscribeContainer table {
+    width: 100%;
+    max-width: 450px;
+    margin: 8px 0;
+}
+
+.MailingListSignupContainer table td,
+.MailingListUnsubscribeContainer table td {
+    padding: 2px 0;
+}
+
+.MailingListSignupContainer table td {
+    line-height: 100%;
+}
+
+.MailingListSignupContainer table td.MailingListCol1,
+.MailingListSignupContainer table td.MailingListCol2,
+.MailingListUnsubscribeContainer table td.MailingListCol1,
+.MailingListUnsubscribeContainer table td.MailingListCol2 {
+    float: left;
+    display: block;
+    width: 100%;
+}
+
+.MailingListSignupContainer table td.MailingListCol2,
+.MailingListUnsubscribeContainer table td.MailingListCol2 {
+    margin-bottom: 10px;
+}
+
+.MailingListSignupContainer table input[type="text"],
+.MailingListUnsubscribeContainer table input[type="text"],
+.MailingListSignupContainer table select {
+    width: 100%;
+}
+
+.MailingListSignupContainer table input[type="checkbox"] {
+    margin: 0 10px 0 0;
+    cursor: pointer;
+}
+
+.MailingListSignupContainer table input[type="checkbox"] + label {
+    cursor: pointer;
+}
+
+.MailingListSignupContainer table .RequiredField,
+.MailingListUnsubscribeContainer table .RequiredField {
+    width: 10%;
+    color: #ff0000;
+}
+
+.MailingListSignupContainer table table {
+    margin: 0;
+}
+
+.MailingListSignupContainer input[type="submit"]:hover,
+.MailingListUnsubscribeContainer input[type="submit"]:hover {
+    background-color: #003455;
+}
+
+.MailingListSignupContainer .NoBr,
+.MailingListSignupContainer .CaptchaContainer,
+.footer-alerts .RequiredField,
+.mailing-list-signup .footernote {
+    display: none;
+}
+
+/*-------------- Person List --------------*/
+
+.PersonGenericContainer .PersonItem {
+    margin-bottom: 25px;
+}
+
+.PersonGenericContainer .PersonContainer {
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 0;
+    margin-top: 23px;
+    padding-bottom: 25px;
+}
+
+.PersonGenericContainer .PersonContainer:first-child {
+    margin-top: 0;
+}
+
+.PersonGenericContainer .PersonDetailsContainer > div {
+    vertical-align: top;
+}
+
+.PersonGenericContainer .PersonPhoto img {
+    display: inline-block;
+    max-width: 100%;
+}
+
+.PersonGenericContainer h3 {
+    color: #444;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 24px;
+    margin-bottom: 15px;
+}
+
+.PersonGenericContainer h3 a,
+.PersonGenericContainer h3 a:hover {
+    color: #444;
+    display: block;
+}
+
+.PersonDescription a, .PersonPhoto a,
+.PersonDescription a span,
+.PersonPhoto a span {
+    pointer-events: none;
+    cursor: text;
+    text-decoration: none;
+}
+
+.PersonTitle {
+    color: #004d7e;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 22px;
+}
+
+.PersonGenericContainer .PersonDescription > span {
+    line-height: 26px;
+}
+
+.PersonComma.PersonTitleComma {
+    display: none;
+}
+
+.board-directors-module .PersonDescription {
+    width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+    .PersonGenericContainer .PersonPhoto {
+        margin-bottom: 25px;
+    }
+
+    .PersonGenericContainer .PersonPhoto,
+    .PersonGenericContainer h3 {
+        text-align: left;
+    }
+}
+
+/*---------  Presentation Module ----------*/
+
+.ModulePresentation .ModuleHeader {
+    display: none;
+}
+
+.ModulePresentation .ModuleHeadline,
+.ModulePresentation .ModuleHeadlineLink {
+    display: block;
+    font-size: 16px;
+    margin-bottom: 18px;
+}
+
+.ModulePresentation .ModuleDateContainer {
+    margin-bottom: 10px;
+}
+
+.latest_presentation .slidelink .q4i-download {
+    padding-right: 10px;
+}
+
+.ModulePresentation .ModuleItemRow {
+    margin-bottom: 25px;
+}
+
+.ModulePresentation .PresentationLinks {
+    display: inline-block;
+}
+
+.ModulePresentation .PresentationLinks a {
+    display: inline-block;
+    padding: 10px;
+    margin-bottom: 5px;
+    background-color: rgba(0,0,0,0.1);
+    color: #000;
+    text-decoration: none;
+}
+
+.ModulePresentation a[class*="q4i-"]:before,
+.ModulePresentation i[class*="q4i-"]:before {
+    margin-right: 10px;
+}
+
+.ModulePresentation .PresentationThumbnail {
+    border: 1px solid rgba(0,0,0,0.1);
+}
+
+/*--------- Press Release Modules ---------*/
+
+.ModulePressRelease .ModuleYearNavContainer,
+.ModulePressReleaseLatest .ModuleYearNavContainer {
+    margin-bottom: 10px;
+}
+
+.ModulePressRelease .ModuleYearNavContainer a,
+.ModulePressReleaseLatest .ModuleYearNavContainer a {
+    display: inline-block;
+    padding: 10px;
+    margin-bottom: 5px;
+    background-color: rgba(0,0,0,0.1);
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.ModulePressRelease .ModuleDate,
+.ModulePressReleaseLatest .ModuleDate,
+.ModulePressReleaseDetails .ModuleDateContainer,
+.ModulePressReleaseDetails .ModuleLinks {
+    margin-bottom: 10px;
+}
+
+.ModulePressRelease .ModuleHeadlineLink,
+.ModulePressReleaseLatest .ModuleHeadlineLink,
+.ModulePressReleaseDetails .ModuleDetailHeadline {
+    font-size: 18px;
+    margin-bottom: 16px;
+}
+
+.ModulePressReleaseLatest .ModuleHeadlineLink {
+    display: block;
+}
+
+.ModulePressRelease .ModuleItemRow,
+.ModulePressReleaseLatest .ModuleItemRow {
+    margin-bottom: 25px;
+}
+
+.ModulePressRelease .ModuleItemRow a[class*="q4i-"]:before,
+.ModulePressRelease .ModuleItemRow i[class*="q4i-"]:before,
+.ModulePressReleaseLatest .ModuleItemRow a[class*="q4i-"]:before,
+.ModulePressReleaseLatest .ModuleItemRow i[class*="q4i-"]:before,
+.ModulePressReleaseDetails .ModuleLinks a[class*="q4i-"]:before,
+.ModulePressReleaseDetails .ModuleLinks i[class*="q4i-"]:before {
+    font-size: 2rem;
+}
+
+.ModulePressRelease .ModuleBody,
+.ModulePressReleaseLatest .ModuleBody {
+    margin: 16px 0;
+    line-height: 20px;
+}
+
+div.prDetails .PageDefaultInner .PaneContent {
+    width: auto;
+    padding: 20px;
+}
+
+div.prDetails .PageDefaultInner .PaneLeft,
+div.prDetails .PageDefaultInner .PaneRight {
+    display: none;
+}
+
+.ModulePressReleaseDetails ul {
+    list-style: inside;
+}
+
+.ModulePressReleaseDetails ul ul {
+    margin-left: 16px;
+    line-height: 18px;
+}
+
+/*---------- Quick Links Modules ----------*/
+
+.RightColumnBlock {
+    display: none;
+}
+
+/*------------- Search Modules ------------*/
+
+.SearchResultsContainer .SearchSummary,
+.SearchResultsContainer .SearchResultItem {
+    margin-bottom: 25px;
+}
+
+.SearchResultsContainer .SearchResultItem {
+    border-bottom: 1px solid #ddd;
+    margin: 0 0 15px;
+    padding: 0 0 15px;
+}
+
+.SearchResultsContainer .SearchLink {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.SearchResultsContainer .SearchDescription span:after,
+.SearchResultsContainer .SearchDescription span:after {
+    display: inline;
+    content: "...";
+}
+
+.SearchResultsContainer .SearchResultUrl {
+    display: none;
+}
+
+.SearchResultsContainer .SearchResultsPaging a:link {
+    font-weight: inherit;
+}
+
+.SearchResultsPaging {
+    border-right: 1px solid #ddd;
+    display: table;
+    margin: 0 auto;
+    text-align: center;
+}
+
+
+.SearchResultsContainer .SearchResultsPaging a {
+    background-color: #ebeef2;
+    border: 1px solid #ddd;
+    border-right: 0 none;
+    display: table-cell;
+    margin-bottom: 5px;
+    padding: 8px 11px;
+    font-weight: bold;
+}
+
+.SearchResultsContainer .SearchResultsPaging a[href] {
+    background-color: #fff;
+    text-align: center;
+}
+
+.SearchResultsPaging strong {
+    display: none;
+}
+
+/*----------- SEC Filing Modules ----------*/
+
+.RegulatoryFilingContainer .FormGroupsContainer,
+.RegulatoryFilingContainer .YearNavContainer {
+    margin-bottom: 20px;
+}
+
+.RegulatoryFilingContainer .YearNavContainer a {
+    display: inline-block;
+    padding: 10px;
+    margin-bottom: 5px;
+    background-color: rgba(0,0,0,0.1);
+    color: #000;
+    text-decoration: none;
+}
+
+.RegulatoryFilingContainer .ModuleHeader > span,
+.RegulatoryFilingContainer .ModuleItemRow > span,
+.RegulatoryFilingContainer .ModuleItemRow > a,
+.RegulatoryFilingContainer .ModuleItemRow > ul,
+.ModuleSECFilingDetails .ModuleContainerInner > div {
+    padding: 10px;
+}
+
+.RegulatoryFilingContainer .ModuleHeader > span {
+    background-color: rgba(0,0,0,0.1);
+}
+
+.RegulatoryFilingContainer .ModuleItemRow:nth-child(odd) {
+    background-color: rgba(0,0,0,0.05);
+}
+
+.RegulatoryFilingContainer .Icons li,
+.ModuleSECFilingDetails .Icons li {
+    display: inline-block;
+    font-size: 18px;
+}
+
+@media screen and (max-width: 768px) {
+    .RegulatoryFilingContainer .ModuleHeader {
+        display: none;
+    }
+}
+
+/*--------------- Site Map -----------------*/
+
+.SiteMapContainer .SiteMapList li {
+    padding: 10px 0;
+}
+
+.SiteMapContainer .SiteMapList li.SiteMap-Level2 {
+    font-size: 18px;
+}
+
+.SiteMapContainer .SiteMapList li.SiteMap-Level3 {
+    padding: 10px;
+}
+
+.SiteMapContainer .SiteMapList li.SiteMap-Level4 {
+    padding: 10px 20px;
+    font-size: 14px;
+}
+/*---------- Stock Quote Modules ----------*/
+
+.StockQuoteContainer .StockPage,
+.StockQuoteContainer .ModuleContainerInnerTop ul li,
+.stock-historical ul li,
+.stock-historical .stock-selects {
+    padding: 10px;
+}
+
+.StockQuoteContainer .StockPage,
+.stock-historical .stock-selects {
+    background-color: rgba(0,0,0,0.1);
+}
+
+.stock-historical .stock-selects > span,
+.stock-historical .stock-selects > select,
+.stock-historical .stock-selects > div {
+    margin-right: 10px;
+}
+
+.stock-historical .stock-selects button {
+    border: 1px solid #fff;
+}
+
+.stock-historical .stock-selects button.disabled {
+    opacity: 0.5;
+    cursor: default;
+}
+
+.stock-historical li span {
+    margin: 5px 0;
+}
+
+.StockQuoteContainer ul li:nth-child(4n),
+.StockQuoteContainer ul li:nth-child(4n+3),
+.stock-table ul li.alt {
+    background-color: rgba(0,0,0,0.05);
+}
+
+.StockQuoteContainer p {
+    padding: 10px 0;
+    font-size: 16px;
+    text-align: right;
+}
+
+.StockQuoteContainer p span {
+    margin-left: 10px;
+}
+
+@media screen and (max-width: 768px) {
+    .stock-historical li span {
+        margin: 5px 0;
+    }
+
+    .stock-historical .stock-selects > span,
+    .stock-historical .stock-selects > div,
+    .stock-historical button,
+    .stock-historical select {
+        display: block;
+        margin: 5px 0;
+    }
+}
+
+/*----------- Stock Quote Header ----------*/
+
+.StockQuoteHeaderContainer .StockPrice {
+    font-weight: normal;
+}
+
+.StockQuoteHeaderContainer .StockChange,
+.StockQuoteHeaderContainer .StockPChange {
+    font-size: 16px;
+    vertical-align: top;
+}
+
+.StockQuoteHeaderContainer .StockChange {
+    display: none;
+}
+
+.StockQuoteHeaderContainer .StockChange:before,
+.StockQuoteHeaderContainer .StockPChange:before {
+    content: "(";
+}
+
+.StockQuoteHeaderContainer .StockChange:after,
+.StockQuoteHeaderContainer .StockPChange:after {
+    content: ")";
+}
+
+.StockQuoteHeaderContainer .StockPriceDown {
+    color: #FF0000;
+}
+
+.StockQuoteHeaderContainer .StockPriceUp {
+    color: #00FF00;
+}
+
+.StockQuoteHeaderContainer .StockVolumeText,
+.StockQuoteHeaderContainer .StockDate {
+    margin-left: 5px;
+    border-left: 1px solid rgba(255,255,255,0.1);
+    padding-left: 10px;
+}
+
+@media screen and (max-width: 1024px) {
+    .StockQuoteHeaderContainer .StockDate,
+    .StockQuoteHeaderContainer .StockVolumeText,
+    .StockQuoteHeaderContainer .StockVolume {
+        display: none;
+    }
+}
+
+
+/*-----------------------------------------*\
+----------- Default Widget Styling ----------
+\*-----------------------------------------*/
+
+/*-------- Add to Calendar Styles ---------*/
+
+.visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;
+}
+
+.q4-atc-wrapper {
+    -webkit-font-smoothing: antialiased;
+}
+
+.q4-atc-wrapper .q4-atc-outer {
+    position: absolute;
+    top: 110%;
+    left: 0;
+    background: white;
+    border: 3px solid #DDDDDD;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    color: #5e5e5e;
+    z-index: 10;
+}
+
+.q4-atc-wrapper .q4-atc-inner {
+}
+
+.q4-atc-wrapper .q4-atc-inner-details {
+    padding: 10px;
+    text-align: center;
+    min-width: 300px;
+}
+
+.q4-atc-wrapper .q4-atc-button {
+    cursor: pointer;
+    -webkit-appearance: none;
+    appearance: none;
+    background: none;
+    border: none;
+    padding: 0;
+    font-size: inherit;
+    font-family: inherit;
+    font-weight: inherit;
+}
+
+.q4-atc-wrapper .q4-atc-title {
+    font-weight: bold;
+}
+
+.q4-atc-wrapper .q4-atc-links {
+    margin: 15px 0 25px;
+    padding: 0;
+    /*markup fix*/
+    font-size: 0;
+}
+
+.q4-atc-wrapper .q4-atc-links li {
+    display: inline-block;
+    vertical-align: top;
+    list-style: none;
+}
+
+.q4-atc-wrapper .q4-atc-links a {
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    background-color: rgba(126, 130, 136, .06);
+    color: #7e8288;
+    text-decoration: none;
+}
+
+.q4-atc-wrapper .q4-atc-links li a:before {
+    font-family: 'q4icons';
+    speak: none;
+    font-style: normal;
+    font-size: 25px;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 60px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.q4-atc-wrapper .q4-atc-links li.apple a:before {
+    content: '\e908';
+}
+
+.q4-atc-wrapper .q4-atc-links li.google a:before {
+    content: '\e90a';
+}
+
+.q4-atc-wrapper .q4-atc-links li.outlook a:before {
+    content: '\e909';
+}
+
+.q4-atc-wrapper .q4-atc-links li.ics a:before {
+    content: "\e630";
+}
+
+.q4-atc-tooltip {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.q4-atc-tooltip-text {
+    display: block;
+    width: 100%;
+    background: rgba(126, 130, 136, .06);
+    padding: 8px 5px;
+    text-align: center;
+}
+
+/*----------- Events Calendar -----------*/
+
+#event-container {
+    display: table;
+    width: 100%;
+}
+
+#events-calendar, #latest-events {
+    display: table-cell;
+}
+
+#events-calendar {
+    padding-right: 20px;
+}
+
+#latest-events {
+    border: 1px solid #ddd;
+}
+
+#events-calendar.loading {
+    background-image: url(../images/loader.gif);
+    background-repeat: no-repeat;
+    width: 16px;
+    height: 16px;
+}
+
+#events-calendar .controls {
+    background-color: #095796;
+    color: #fff;
+    display: table;
+    width: 100%;
+}
+
+#events-calendar .controls div {
+    display: table-cell;
+    text-align: center;
+    padding: 20px 0;
+}
+
+#events-calendar .headers {
+    background-color: #f2f2f2;
+}
+
+#events-calendar .controls .month {
+    width: 70%;
+    font-size: 24px;
+}
+
+#events-calendar .clndr-previous-button,
+#events-calendar .clndr-next-button {
+    width: 15%;
+    text-align: center;
+    cursor: pointer;
+}
+
+#events-calendar .days-container {
+    position: relative;
+}
+
+#events-calendar .day-header, #events-calendar .day {
+    background-color: #f2f2f2;
+    border: 1px solid #fff;
+    display: inline-block;
+    padding: 12px 0;
+    text-align: center;
+    width: 14.285%;
+}
+
+#events-calendar .day.adjacent-month, #events-calendar .empty.adjacent-month {
+    opacity: .5;
+    background-color: transparent;
+}
+
+#events-calendar .days-container .days .day.today,
+#events-calendar .days-container .days .empty.today {
+    background-color: rgba(0,0,0,0.5);
+    color: #fff;
+}
+
+#events-calendar .day.event, #events-calendar .empty.event {
+    background-color: #c19a5d;
+    color: #fff;
+    cursor: pointer;
+    opacity: 1;
+}
+
+#events-calendar .day.adjacent-month.last-month,
+#events-calendar .day.adjacent-month.next-month {
+    visibility: hidden;
+}
+
+#events-calendar .day-header {
+    text-align: center;
+    background-color: transparent;
+}
+
+#latest-events .ModuleEvent {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+#latest-events .ModuleEvent .date {
+    width: 90%;
+    margin: 0 auto;
+    padding: 5%;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+#latest-events .ModuleEvent .date h5,
+#latest-events .ModuleEvent .date h4 {
+    display: block;
+}
+
+#latest-events .ModuleEvent .date h5 {
+    font-size: 25px;
+}
+
+#latest-events .ModuleEvent .date h4 {
+    font-size: 50px;
+}
+
+#latest-events .ModuleEvent > ul {
+    padding: 10% 5%;
+}
+
+#latest-events .AddToCalendar a {
+    color: #000;
+}
+
+@media screen and (max-width: 768px) {
+    #events-calendar, #latest-events {
+        display: inline-block;
+    }
+
+    #events-calendar {
+        padding: 0 0 20px;
+    }
+}
+
+/*---------- Fancybox Captcha -------------*/
+
+.fancybox-inner .CaptchaContainer {
+    padding: 0 30px 15px;
+}
+
+.fancybox-inner .CaptchaContainer img,
+.fancybox-inner .CaptchaContainer input {
+    width: 100%;
+}
+
+.fancybox-inner .CaptchaContainer table tr:first-child {
+    display: none;
+}
+
+.fancybox-inner .CaptchaContainer td,
+.fancybox-inner .CaptchaContainer .ErrorContainer {
+    padding: 5px 0;
+}
+
+.fancybox-inner .CaptchaContainer table td span {
+    display: none !important;
+}
+
+.fancybox-inner .CaptchaContainer img {
+    border: 1px solid #ddd;
+}
+
+.fancybox-inner .CaptchaContainer input[type="text"] {
+    -webkit-appearance: none;
+    appearance: none;
+    padding: 5px 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+}
+
+.fancybox-inner .CaptchaContainer input[type="submit"] {
+    -webkit-appearance: none;
+    appearance: none;
+    padding: 10px;
+    border: none;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+}
+
+.fancybox-inner .CaptchaContainer input[type="submit"] + input {
+    display: none;
+}
+
+.fancybox-inner .CaptchaContainer .ErrorContainer + .ErrorContainer {
+    display: none;
+}
+
+/*------- Financial Quarterly Widget ------*/
+
+.q4-quarterly-widget .q4-items-container,
+.q4-presentations .q4-items-container {
+    display: none;
+}
+
+.q4-quarterly-widget .q4-year-container i,
+.q4-presentations .q4-year-container i {
+    margin-left: 10px;
+}
+
+.q4-quarterly-widget .q4-year-container.active i:before,
+.q4-presentations .q4-year-container.active i:before,
+.q4-financial-container.quarterly.active .q4i-block-plus:before {
+    content: "\e604";
+}
+
+.q4-quarterly-widget .q4-year-container span,
+.q4-quarterly-widget .q4-financial-document,
+.presentations-widget .q4-year-container span {
+    display: inline-block;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 5px;
+    background-color: transparent;
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.q4-quarterly-widget .q4-financial-item {
+    margin: 10px 0 10px 10px;
+}
+
+.q4-quarterly-widget .q4-financial-documents {
+    margin: 10px 0;
+}
+
+.q4-quarterly-widget .q4-financial-document i[class*="q4i-"]:before {
+    margin-right: 10px;
+}
+
+.q4-quarterly-widget .q4-financial-document i.PDF:before,
+.q4-quarterly-widget .q4-financial-document i.pdf:before {
+    content: "\e902";
+}
+
+.q4-quarterly-widget .q4-financial-document i.xlsx:before,
+.q4-quarterly-widget .q4-financial-document i.xls:before,
+.q4-quarterly-widget .q4-financial-document i.XLSX:before,
+.q4-quarterly-widget .q4-financial-document i.XLS:before {
+    content: "\e90b";
+}
+
+.q4-financial-container.quarterly .q4i-block-plus:before {
+    content: "\e605" !important;
+    //replace icon;
+}
+
+.q4-financial-container.quarterly.active .q4i-block-plus:before {
+    content: "\e604" !important;
+    //replace icon;
+}
+/*-------- Financial Table Widget ---------*/
+
+.financial-table .financial-document-category,
+.financial-table .financial-year-list,
+.financial-table .financial-category-text {
+    background-color: rgba(0,0,0,0.1);
+}
+/* Slick Overwrite */
+.financial-table .financial-document-category,
+.financial-table .financial-year-list,
+.financial-table .financial-category-text,
+.financial-table .financial-document-list {
+    display: inline-block;
+}
+
+.financial-table .financial-year-list,
+.financial-table .financial-documents {
+    text-align: center;
+}
+
+.financial-table .financial-document-category,
+.financial-table .financial-year-list .slick-list,
+.financial-table .financial-category-text {
+    padding: 20px;
+}
+
+.financial-table .financial-documents span {
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background-color: rgb(15, 92, 163);
+    margin: 5px 2px;
+    text-align: center;
+    line-height: 35px;
+    color: #fff;
+}
+
+.financial-table .financial-documents span.empty {
+    opacity: 0.1;
+}
+
+.financial-table .financial-documents span a {
+    color: #fff;
+}
+
+.financial-table .slick-slide:focus {
+    outline: none;
+}
+
+.financial-table .financial-document-list .slick-arrow {
+    visibility: hidden;
+}
+
+.financial-table .financial-year-list .slick-arrow {
+    width: 50px;
+    height: 60%;
+}
+
+.financial-table .financial-year-list .slick-prev {
+    left: 0;
+    border-right: 1px solid #fff;
+}
+
+.financial-table .financial-year-list .slick-next {
+    right: 0;
+    border-left: 1px solid #fff;
+}
+
+.financial-table .financial-year-list .slick-list {
+    margin: 0 30px;
+}
+
+.financial-table .financial-document-list .slick-list {
+    margin: 0 50px;
+}
+
+@media screen and (max-width: 480px) {
+    .financial-table .financial-documents span {
+        display: block;
+        margin: 5px auto 5px;
+    }
+}
+
+/*----------- Stock Chart Inputs ----------*/
+
+@media screen and (max-width: 768px) {
+    .stock-chart .highcharts-input-group {
+        display: none;
+    }
+}
+
+/*-------------- Slider Widget ---------------*/
+
+.slider .slider-item {
+    position: relative;
+    width: 100%;
+    min-height: 200px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #fff;
+    overflow: hidden;
+}
+
+.slider .spacer {
+    display: block;
+    padding-top: 21.875%; /* Image (height / width * 100) */
+    width: 100%;
+}
+
+.slider .content-container {
+    position: absolute;
+    left: 50%;
+    margin-left: -600px;
+    width: 100%;
+    padding: 20px 50px;
+    max-width: 1200px;
+}
+
+.slider .content-container h2 {
+    font-size: 25px;
+    margin-bottom: 10px;
+}
+
+.slider .content-container p {
+    background-color: rgba(255, 255, 255, 0.25);
+    height: 50px;
+    padding: 15px;
+}
+
+@media screen and (max-width: 1200px) {
+    .slider .slider-item {
+        height: auto;
+    }
+
+    .slider .content-container {
+        left: 0;
+        margin-left: 0;
+        padding: 20px;
+    }
+}
+
+
+/*-----------------------------------------*\
+------------- HTML Specific Parts -----------
+\*-----------------------------------------*/
+
+/*---------- Default Table Style ----------*/
+
+.custom-table {
+    width: 100%;
+}
+
+.custom-table thead {
+    background-color: rgba(0,0,0,0.1);
+}
+
+.custom-table td,
+.custom-table th {
+    padding: 10px 5px;
+}
+
+.custom-table tbody tr:nth-child(even) {
+    background-color: rgba(0,0,0,0.05);
+}
+
+.custom-table th span,
+.custom-table td span {
+    padding: 0;
+}
+
+/*----- Better Analyst Coverage Table -----*/
+
+@media screen and (max-width: 768px) {
+    .analyst-coverage thead {
+        display: none;
+    }
+
+    .analyst-coverage tr td:before {
+        content: attr(data-heading);
+        box-sizing: border-box;
+        display: inline-block;
+        width: 50%;
+        margin-right: -.25em;
+        vertical-align: top;
+    }
+}
+
+/*------ Default List and List Items ------*/
+
+.HtmlTextContainer ul {
+    line-height: 26px;
+    list-style-type: disc;
+    margin: 15px 0 15px 30px;
+}
+
+.HtmlTextContainer ul ul {
+    margin-left: 16px;
+    line-height: 18px;
+}
+
+.HtmlTextContainer ol {
+    line-height: 26px;
+    list-style-type: decimal;
+    margin: 8px 0 15px 30px;
+}
+
+.HtmlTextContainer li {
+    padding-top: 5px;
+}
+
+/*-------------- Global Styles ------------*/
+
+/* Genetal */
+body {
+    background-color: #FFF;
+    overflow-x: hidden;
+    line-height: 26px;
+}
+
+h1 {
+    color: #333;
+    font-size: 30px;
+    margin-bottom: 30px;
+}
+
+h2 {
+    color: #004d7e;
+    font-size: 24px;
+    font-weight: 400;
+    margin-bottom: 15px;
+}
+
+h4 {
+    color: #333;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+h5 {
+    color: #444;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+p {
+    line-height: 26px;
+    margin: 8px 0 25px;
+}
+
+a {
+    text-decoration: none;
+    color: #004d7e;
+    -webkit-transition: color 0.2s ease-in-out 0s, background 0.2s ease-in-out 0s;
+    -moz-transition: color 0.2s ease-in-out 0s, background 0.2s ease-in-out 0s;
+    -o-transition: color 0.2s ease-in-out 0s, background 0.2s ease-in-out 0s;
+    transition: color 0.2s ease-in-out 0s, background 0.2s ease-in-out 0s;
+}
+
+
+a:hover {
+    color: #ddb208;
+}
+
+.text-strong {
+    font-weight: 700;
+}
+
+.text-italic {
+    font-style: italic;
+    line-height: 30px;
+}
+
+.img-pstn-center {
+    text-align: center;
+    margin: 15px 0;
+}
+
+.redactor-img.redactor-img-right {
+    float: right;
+    margin-left: 20px;
+}
+
+.ContentPaneDiv {
+    display: block;
+}
+
+hr {
+    border-top: 1px solid #ddd;
+    height: 0;
+    margin: 15px 0;
+}
+
+img {
+    max-width: 100%;
+}
+
+input[type="text"], input[type="submit"],
+input[type="file"], select, button, textarea {
+    display: inline-block;
+    -webkit-appearance: none;
+    appearance: none;
+    padding: 5px 8px;
+    border: 1px solid rgba(0,0,0,0.1);
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+}
+
+input[type="text"] {
+    height: 40px;
+    line-height: 30px;
+    background: #fff;
+    -webkit-transition: all 0.2s linear 0s;
+    -ms-transition: all 0.2s linear 0s;
+    transition: all 0.2s linear 0s;
+}
+
+input[type="text"]:focus {
+    background-color: #f5fbfe;
+    border-color: #99baca;
+    color: #444;
+    outline: 0 none;
+}
+
+select {
+    background-image: url('../design/select-icons.png');
+    background-repeat: no-repeat;
+    background-position: 90% -115px;
+    padding-right: 50px;
+}
+
+.learnmore-button {
+    border: 1px solid #fff;
+    border-radius: 5px;
+    color: #fff;
+    display: inline-block;
+    line-height: 100%;
+    padding: 12px 15px;
+    text-shadow: 0 1px 0 #fff;
+}
+
+.learnmore-button:hover {
+    border: 1px solid #5ab2ff;
+    color: #5ab2ff;
+}
+
+.learnmore-button .icon-right {
+    margin-left: 20px;
+}
+
+.learnmore-button .icon-right:before {
+    font-family: FontAwesome;
+    content: "\f0da";
+}
+
+.pager-next:after {
+    content: '\e64f';
+}
+
+.pager-next:after, .pager-prev:before {
+    color: #ddb208;
+    cursor: pointer;
+    font-family: 'q4icons';
+    position: relative;
+    top: 2px;
+    vertical-align: bottom;
+}
+
+.Pagination {
+    text-align: center;
+}
+
+.Pagination li, .pagination-Message.paginationMessage,
+.Pagination .paginationMessage {
+    display: inline-block;
+    margin: 10px;
+}
+
+.pager-prev:before {
+    content: '\e64c';
+}
+
+.Pagination .pager-disabled, .Pagination .pager-page,
+.paginationMessage, .pagination-Message {
+    display: none;
+}
+
+.inner-heading h1 {
+    display: none;
+}
+
+.overview-inner-head .inner-heading h1, .operations-inner .inner-heading h1,
+.investor-inner-title .inner-heading h1, .news-inner-title .inner-heading h1,
+.citizenship-inner-title .inner-heading h1, .job-inner-title .inner-heading h1,
+.search-inner-title .inner-heading h1, site-inner, pagenot-inner {
+    display: block;
+}
+
+/* Containers */
+.PaneHeader > span,
+.PaneNavigation > span,
+.PaneFooter, .PaneFooter2,
+.PaneContentInner,
+.inner-heading .ContentContainer {
+    display: block;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 35px;
+}
+
+.FooterContainer {
+    background-color: #FFF;
+    padding: 0;
+}
+
+/* PaneHeader */
+
+.PaneHeader {
+    background-color: #FFF;
+    padding: 7px 0 3px;
+}
+
+.ClientLogo,
+.StockQuoteHeaderContainer,
+.ModuleSearch,
+.header-stockquote, div.header-quicklinks {
+    max-height: 75px;
+    vertical-align: middle;
+}
+
+.StockQuoteHeaderContainer, .mobile-toggle {
+    float: right;
+    margin-left: 20px;
+}
+
+.StockQuoteHeaderContainer, .ModuleSearch, .mobile-toggle, .ClientLogo {
+    vertical-align: middle;
+}
+
+.ClientLogo img {
+    max-height: 75px;
+}
+
+.StockQuoteHeaderContainer {
+    color: #fff;
+}
+
+.ModuleSearch input {
+    border: 1px solid #fff;
+}
+
+.ModuleSearch .SearchButton {
+    cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+    .StockQuoteHeaderContainer, .ModuleSearch {
+        display: none;
+    }
+
+    .ClientLogo img {
+        max-width: 200px;
+    }
+}
+
+/* Home page PaneLeft */
+
+.LayoutHomePage .PaneLeft {
+    display: none;
+}
+
+/* Home page PaneLeft */
+
+/* Home page PaneRight & PaneContent */
+
+.LayoutHomePage .PaneContent,
+.LayoutHomePage .PaneRight {
+    padding-left: 0;
+}
+
+/* PaneFooter */
+
+.footer-logo {
+    border-right: 1px solid #ddd;
+    height: 139px;
+    padding: 0;
+}
+
+.FooterLinks li {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.FooterLinks li a {
+    color: white;
+}
+
+.Copyright, .PaneQ4Footer a {
+    color: #aecde2;
+    font-size: 12px;
+}
+
+/*----------- Mobile Navigation -----------*/
+
+.mobile-toggle {
+    display: none;
+    cursor: pointer;
+}
+
+.menu-close {
+    display: none;
+}
+
+/*------------- Miscellaneous -------------*/
+
+/* Dark Styles */
+.dark {
+    color: #fff;
+}
+
+/* RSS */
+.rss-icons {
+    margin-bottom: 50px;
+}
+
+div.pre-module-text {
+    margin-bottom: 0;
+}
+
+.ModuleFileText, .ModuleFileSpacer {
+    display: none;
+}
+
+.ErrorContainer {
+    color: #ff0000;
+}
+
+.css {
+    color: #FF00FF;
+}
+
+.upcoming-events .ModuleYearNavContainer {
+    display: none;
+}
+
+/*--------------- Header CSS Start ---------------*/
+
+.header-stockquote {
+    text-align: center;
+}
+
+div.header-quicklinks {
+    text-align: right;
+}
+
+ul.header-quicklinks {
+    width: 100%;
+}
+
+.header-stockquote span.stock-data {
+    margin-right: 10px;
+}
+
+.header-stockquote span.symbol {
+    color: #004d7e;
+    font-weight: 700;
+}
+
+div.header-quicklinks ul > li {
+    display: inline-block;
+    padding-left: 10px;
+}
+
+div.header-quicklinks ul > li:first-child {
+    padding-left: 0;
+}
+
+div.header-quicklinks ul > li:before {
+    content: "";
+    display: inline-block;
+    height: 10px;
+    vertical-align: middle;
+    border-left: 1px solid #e4f5ff;
+    margin-top: 0;
+    padding-left: 10px;
+}
+
+div.header-quicklinks ul > li:first-child:before {
+    border-left: 0;
+}
+
+div.header-quicklinks ul > li > a {
+    color: #004d7e;
+    font-size: 14px;
+}
+
+.PaneNavigation nav .level1 > li:first-child {
+    padding-left: 0;
+}
+
+.inner-heading h1 {
+    color: #fff;
+    font-size: 21px;
+    line-height: 105px;
+    margin: 0;
+    text-transform: uppercase;
+}
+
+.inner-heading.grid-no-gutter .col {
+    vertical-align: middle;
+}
+
+.Breadcrumb.global-titles {
+    font-size: 0;
+    padding-top: 10px;
+    text-align: right;
+}
+
+.Breadcrumb.global-titles .BreadcrumbHomeLink,
+.Breadcrumb.global-titles .BreadcrumbSeparator,
+.Breadcrumb.global-titles a,
+.home-title .Breadcrumb.global-titles .BreadcrumbHomeLink + .BreadcrumbSeparator + a,
+.sub-page-title .Breadcrumb.global-titles .BreadcrumbHomeLink,
+.home-title.sub-page-title .Breadcrumb.global-titles .BreadcrumbHomeLink {
+    display: none;
+}
+
+.Breadcrumb.global-titles a,
+.page-title .Breadcrumb.global-titles {
+    color: #fff;
+    font-size: 36px;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.page-news-details .Breadcrumb.global-titles {
+    visibility: hidden;
+    margin-top: -30px;
+    padding-bottom: 35px;
+}
+
+.page-news-details .Breadcrumb.global-titles .BreadcrumbHomeLink + .BreadcrumbSeparator + a {
+    visibility: visible;
+    float: right;
+    padding: 25px 0 0;
+}
+
+.Breadcrumb.global-titles .BreadcrumbHomeLink + .BreadcrumbSeparator + a,
+.home-title .Breadcrumb.global-titles .BreadcrumbHomeLink,
+.sub-page-title .Breadcrumb.global-titles .BreadcrumbHomeLink + .BreadcrumbSeparator + a + .BreadcrumbSeparator + a,
+.home-title.sub-page-title .Breadcrumb.global-titles .BreadcrumbHomeLink + .BreadcrumbSeparator + a {
+    display: inline-block;
+    padding: 20px 0 30px;
+}
+
+.innerpage-banner {
+    background-image: url("../images/banner/banner-1.jpg");
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-bottom: 25%;
+}
+
+.HiddenStockQuote {
+    display: none;
+}
+
+
+@media screen and (max-width: 480px) {
+    .innerpage-banner {
+        padding-bottom: 40%;
+    }
+}
+/*Pane Navigation */
+
+.search-section {
+    margin: 12px 0 0;
+    text-align: right;
+    position: relative;
+}
+
+.search-section .SearchInput[type="text"] {
+    padding-right: 30px;
+    width: 100%;
+}
+
+.search-section .SearchInput[type="text"]::-ms-clear {
+    display: none;
+}
+
+.search-section .ModuleButton.SearchButton {
+    background-color: transparent;
+    background-image: url("../icons/search.png");
+    background-position: center center;
+    background-repeat: no-repeat;
+    border: 0 none;
+    font-size: 0;
+    height: 40px;
+    padding: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 36px;
+}
+
+.PaneNavigation nav ul li {
+    display: inline-block;
+    padding: 10px;
+}
+
+.PaneNavigation .primary-navigation {
+    width: 74.967%;
+}
+
+.PaneNavigation, .mobile-blue-bg {
+    background-color: #0b538f;
+    background-image: url("../design/menu-overlay-bg.png");
+    -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.1);
+    -moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.1);
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.1);
+    position: relative;
+}
+
+.mobile-blue-bg {
+    height: 50px;
+    display: none;
+}
+
+.PaneNavigation nav .level1 {
+    width: 100%;
+}
+
+.PaneNavigation nav .level1 > li {
+    display: inline-block;
+    padding: 19px 22px;
+    position: relative;
+}
+
+.PaneNavigation nav .level1 > li a {
+    text-align: left;
+    color: #FFF;
+    font-size: 20px;
+}
+
+.PaneNavigation nav .level1 > li a:hover,
+.PaneNavigation nav .level1 > li a:focus,
+.PaneNavigation nav .level1 > li.expanded > a,
+.PaneNavigation nav .level1 > li.selected > a {
+    text-decoration: none;
+    color: #ddb208;
+}
+
+.PaneNavigation nav .level3 {
+    display: none;
+}
+
+.PaneNavigation nav .level2 {
+    background-color: #004d7e;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
+    padding: 6px;
+    left: 0;
+    min-width: 180px;
+    position: absolute;
+    text-align: left;
+    top: 100%;
+    width: 100%;
+    z-index: 1000;
+    visibility: hidden;
+    opacity: 0;
+    filter: alpha(opacity=0);
+    -webkit-transition: 200ms ease;
+    -moz-transition: 200ms ease;
+    -o-transition: 200ms ease;
+    transition: 200ms ease;
+}
+
+.PaneNavigation nav .level1 > li:hover .level2,
+.PaneNavigation nav .level1 > li.focused .level2 {
+    visibility: visible !important;
+    opacity: 1 !important;
+    filter: alpha(opacity=100);
+}
+
+.PaneNavigation nav .level2 > li {
+    display: block;
+    padding: 0;
+    text-align: left;
+}
+
+.PaneNavigation nav .level2 > li > a {
+    display: block;
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 20px;
+    margin: 0;
+    padding: 10px;
+    text-transform: none;
+}
+
+.PaneNavigation nav .level2 > li.selected > a,
+.PaneNavigation nav .level2 > li.expanded > a {
+    color: #ddb208;
+}
+
+/*PaneHeader2*/
+
+/* PaneBreadcrumb */
+
+.Breadcrumb,
+.Breadcrumb a,
+.Breadcrumb span {
+    font-size: 14px;
+    margin-right: 5px;
+}
+
+/* PaneContentInner */
+.PaneContentInner {
+    padding: 25px 35px;
+}
+
+.LayoutTwoColumn .PaneContentInner {
+    padding: 25px 35px 0;
+}
+
+.ModuleTitle {
+    display: block;
+    font-size: 24px;
+    margin-bottom: 18px;
+}
+
+.PaneNavigation .level1 li a span,
+.offcanvas-mobile-items,
+.PaneNavigation .mobile-logo,
+.PaneNavigation .mobile-copyright-section,
+.PaneNavigation .header-stockquote {
+    display: none;
+}
+
+/* PaneContentInner */
+@media screen and (max-width: 1200px) {
+    div {
+        border: 0 solid red;
+    }
+
+    .PaneHeader > span, .PaneNavigation > span,
+    .PaneFooter, .PaneFooter2, .PaneContentInner,
+    .inner-heading .ContentContainer {
+        max-width: 980px;
+        padding: 20px 25px 0;
+    }
+
+    .PaneNavigation > span,
+    .PaneHeader > span {
+        padding: 0 25px;
+    }
+
+    .mobile-toggle {
+        display: none;
+    }
+
+    .PaneNavigation nav .level1 > li {
+        padding: 19px 17px;
+    }
+
+    .PaneNavigation nav .level1 > li a {
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-width: 1025px) {
+
+    .PaneNavigation .level1 > li.has-children > a {
+        pointer-events: none;
+    }
+}
+
+@media screen and (max-width: 980px) {
+    div {
+        border: 0 solid green;
+    }
+
+    .header-stockquote span.symbol,
+    .header-stockquote span.value {
+        font-size: 13px;
+    }
+
+    .ClientLogo {
+        height: 80px;
+    }
+
+    .ClientLogo img {
+        padding-top: 14px;
+    }
+
+    div.header-quicklinks ul > li > a {
+        font-size: 12px;
+    }
+
+    .PaneNavigation nav .level1 > li {
+        padding: 19px 16px;
+    }
+
+    .LayoutTwoColumn .PaneContentInner {
+        padding: 25px 25px 0;
+    }
+
+    .redactor-img.redactor-img-right {
+        width: 45%;
+    }
+
+    .inner-heading h1 {
+        font-size: 19px;
+    }
+
+    .PaneNavigation nav .level1 > li {
+        padding: 19px 11px;
+    }
+
+    .PaneNavigation nav .level1 > li a {
+        font-size: 16px;
+    }
+}
+
+@media screen and (max-width: 776px) {
+    div {
+        border: 0 solid blue;
+    }
+
+    .PaneNavigation .level1 > li.has-children > a {
+        pointer-events: auto;
+    }
+
+    .mobile-toggle {
+        display: inline-block;
+        margin: 0;
+        position: relative;
+        right: -10px;
+        top: 23px;
+        padding-top: 2px;
+    }
+
+    .mobile-toggle .q4i-square-menu:before {
+        content: "\f0c9";
+        color: #444;
+        font-family: FontAwesome !important;
+        font-size: 22px;
+    }
+
+    .ClientLogo {
+        height: auto;
+        width: auto;
+    }
+
+    .ClientLogo img {
+        margin: 5px 0 3px;
+        max-height: 65px;
+        max-width: 100%;
+        padding: 0;
+    }
+
+    .q4-preview-open {
+        display: none;
+    }
+
+    .header-stockquote, div.header-quicklinks {
+        display: none;
+    }
+
+    .PaneNavigation .primary-navigation {
+        border-top: 1px solid #555;
+    }
+
+    .PaneNavigation .header-stockquote {
+        background-color: #333333;
+        border-top: 1px solid #555;
+        display: block;
+        margin: 0 0 4px;
+        max-height: 100%;
+        padding: 7px 0 7px 18px;
+        text-align: left;
+        width: auto;
+    }
+
+    .mobile-toggled .PaneNavigation {
+        right: 0;
+        overflow-y: scroll;
+    }
+
+    .mobile-blue-bg.search-section {
+        display: block;
+        padding: 5px 0 0;
+        text-align: right;
+    }
+
+    .search-section .ModuleContainerInner {
+        display: none;
+        float: right;
+        margin: 0 43px;
+        position: relative;
+        width: 60%;
+    }
+
+    .search-section .SearchText {
+        cursor: pointer;
+        display: inline-block;
+        height: 30px;
+        position: absolute;
+        right: 17px;
+        top: 11px;
+        width: 20px;
+    }
+
+    .search-section .SearchText:before {
+        color: #fff;
+        content: "\f002";
+        font-family: 'FontAwesome';
+    }
+
+    .searchpane .search-section .SearchText:before {
+        content: "\f00d";
+    }
+
+    .mobile-toggled.LayoutDefaultInner {
+        right: 270px;
+        left: -270px;
+        overflow: hidden;
+    }
+
+    .LayoutDefaultInner {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        transition: ease 0.5s;
+    }
+
+    .menu-close {
+        cursor: pointer;
+    }
+
+    .PaneNavigation {
+        background-color: #222;
+        background-image: none;
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        right: -270px;
+        width: 270px;
+        padding: 0;
+        transition: ease 0.5s;
+        color: #FFF;
+    }
+
+    .PaneNavigation:after {
+        bottom: 0;
+        content: "";
+        display: block;
+        position: absolute;
+        right: 0;
+        top: 0;
+        background: rgba(0, 0, 0, 0.6) none repeat scroll 0 0;
+        box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.6);
+        width: 1px;
+    }
+
+    .mobile-toggled .PaneNavigation:after {
+        left: 0;
+        right: auto;
+        z-index: 1000;
+    }
+
+    .PaneNavigation .q4i-block-exit.menu-close {
+        display: none;
+    }
+
+    .PaneNavigation > span {
+        padding: 0;
+    }
+
+    .PaneNavigation nav ul.level1 > li {
+        border-bottom: 0;
+        border-top: 1px solid #3d3d3d;
+        display: block;
+        padding: 0;
+    }
+
+    .PaneNavigation nav ul.level1 > li > a,
+    .PaneNavigation nav ul.level2 > li > a {
+        color: #ccc;
+        padding: 10px 15px;
+        font-size: 16px;
+    }
+
+    .PaneNavigation nav ul.level2 > li > a {
+        font-size: 14px;
+        padding: 5px 15px;
+    }
+
+    .PaneNavigation nav .level1 > li:hover .level2 {
+        visibility: visible;
+    }
+
+    .PaneNavigation nav ul, .PaneNavigation nav ul li {
+        display: block;
+    }
+
+    .PaneNavigation nav ul li,
+    .PaneNavigation nav ul.level1 > li > a,
+    .PaneNavigation .menu-close {
+        display: block;
+        padding: 15px;
+        border-bottom: 1px solid rgba(0,0,0,0.5);
+    }
+
+    .PaneNavigation nav ul li.has-children > a:before {
+        content: "\f104";
+        font-family: FontAwesome;
+        display: inline-block;
+        float: right;
+        cursor: pointer;
+    }
+
+    .PaneNavigation nav ul li.has-children.expanded > a:before {
+        content: "\f107";
+    }
+
+    .PaneNavigation nav ul.level2 li > a:before,
+    .PaneNavigation nav ul.level2 li.has-children > a:before {
+        content: "\f0da";
+        font-family: FontAwesome;
+        float: left;
+        padding-right: 5px;
+    }
+
+    .PaneNavigation nav ul li.has-children > ul {
+        background-color: transparent;
+        max-height: 0;
+        overflow: hidden;
+        padding: 0;
+        transition: ease 0.5s;
+        position: relative;
+        opacity: 1;
+    }
+
+    .PaneNavigation nav ul li.has-children.expanded > ul {
+        max-height: 1000px;
+        visibility: visible;
+    }
+
+    .PaneNavigation .level1 li a span {
+        display: inline-block;
+    }
+
+    .PaneNavigation .mobile-logo,
+    .PaneNavigation .mobile-copyright-section {
+        display: block;
+    }
+
+    .mobile-logo {
+        background-color: #404040;
+        padding: 5px 15px;
+        margin-bottom: 4px;
+    }
+
+    .mobile-logo .mobile-logo-container {
+        border-top: 1px solid rgba(0, 0, 0, 0.3);
+    }
+
+    .mobile-logo .mobile-logo-container > a {
+        border-top: 1px solid #4f4f4f;
+        display: block;
+    }
+
+    .mobile-logo .mobile-logo-container img {
+        display: block;
+        margin: 10px auto;
+        width: 200px;
+    }
+
+    .PaneNavigation nav {
+        background-color: #333;
+        border-top: 1px solid #242424;
+    }
+
+    .PaneNavigation nav ul.level1 > li > a {
+        border-top: 1px solid #333;
+    }
+
+    .PaneNavigation nav ul.level1 li:hover,
+    .PaneNavigation nav ul.level1 li.expanded > a {
+        background-color: #404040;
+        color: #ccc;
+    }
+
+    .PaneNavigation nav ul li.expanded ul.level2 {
+        border-bottom: 1px solid #202020;
+        padding: 5px 0;
+    }
+
+    .PaneNavigation nav ul li.expanded ul {
+        background-color: #333;
+    }
+
+    .PaneNavigation nav ul li.expanded li {
+        border-bottom: 0 none;
+    }
+
+    .mobile-copy-right {
+        background-color: #333;
+        border-top: 1px solid #555;
+        color: #777;
+        font-size: 12px;
+        line-height: 30px;
+        margin: 3px 0 0;
+        padding: 20px 0 5px;
+        text-align: center;
+    }
+
+    .PaneNavigation nav .level1 > li a:hover,
+    .PaneNavigation nav .level1 > li.expanded > a,
+    .PaneNavigation nav .level1 > li.selected > a {
+        color: #ccc;
+    }
+
+    .header-stockquote span.stock-data {
+        display: block;
+        margin: 0 0 10px;
+    }
+
+    .header-stockquote span.stock-data.gold-value {
+        margin: 0;
+    }
+
+    .header-stockquote span.symbol,
+    .header-stockquote span.value {
+        color: #aaa;
+        font-size: 16px;
+        font-weight: normal;
+    }
+
+    .header-stockquote span.value {
+        color: #FFF;
+    }
+
+    .PersonContainer .PersonPhoto {
+        text-align: center;
+    }
+
+    .PersonGenericContainer .PersonPhoto img {
+        max-width: 200px;
+    }
+
+    .redactor-img.redactor-img-right {
+        float: none;
+        margin: 0;
+        width: 65%;
+    }
+
+    .primary-navigation.col.col-2-of-3 {
+        display: block;
+        width: auto;
+    }
+
+    .search-section {
+        display: none;
+    }
+
+    .PaneHeader {
+        height: 73px;
+    }
+
+    .PaneNavigation nav ul li.has-children .level3 {
+        display: block;
+        max-height: 100%;
+    }
+
+    .PaneNavigation nav ul li.has-children .level3 > li {
+        padding: 0 15px 0 25px;
+    }
+
+    .PaneNavigation nav ul li.has-children .level3 > li a {
+        color: #ccc;
+        font-size: 14px;
+    }
+
+    .lowcostproduction-section .background-bg {
+        min-height: 430px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .search-section .ModuleContainerInner {
+        margin: 0;
+        width: 77%;
+    }
+
+    .lowcostproduction-section .background-bg {
+        min-height: 300px;
+    }
+
+    .mobile-toggle {
+        padding: 10PX;
+    }
+}
+
+/*--------------- Header CSS End ---------------*/
+
+/*--------------- Footer CSS Start ---------------*/
+
+.PaneFooter .FooterPaneDiv {
+    background-color: #f7f2e8;
+    display: inline-block;
+    margin: 0;
+    padding: 25px;
+    width: 100%;
+}
+
+.PaneFooter h3, .PaneFooter h2, .footer-alerts h1,
+.PaneFooter .ModuleTitle {
+    color: #444;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.subscribe-button-section .subscribe-button {
+    background-color: #004d7e;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+    height: 40px;
+    line-height: 38px;
+    margin: 19px 20px 0 0;
+    text-align: center;
+}
+
+.subscribe-button-section,
+.subscribe-button-section .ErrorContainer {
+    position: relative;
+}
+
+.subscribe-button-section strong {
+    color: green;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 20px;
+}
+
+.MailingListActivationMessage {
+    color: green;
+}
+
+.subscribe-button-section .error-container {
+    margin: 0;
+}
+
+.error-container > li {
+    font-size: 12px;
+    line-height: 22px;
+    list-style: outside none none;
+    padding: 0;
+}
+
+.PaneFooter .mailing-list-signup {
+    background-color: #fafafa;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px rgba(102, 102, 102, 0.4);
+    display: none;
+    min-height: 386px;
+    padding: 15px;
+    position: absolute;
+    top: -345px;
+    width: 320px;
+    z-index: 5;
+}
+
+.mailing-list-signup .footer-alerts {
+    color: #444;
+    font-size: 14px;
+}
+
+.PaneFooter .mailing-list-signup .footernote {
+    font-size: 12px;
+    line-height: 17px;
+    margin-bottom: 0;
+    display: block;
+}
+
+.mailing-list-signup .GridActions {
+    padding-top: 15px;
+}
+
+.mailing-list-signup .footer-alerts td.MailingListCol1 {
+    display: none;
+}
+
+.mailing-list-signup .MailingListSignupContainer table td.MailingListCol2 {
+    margin: 0;
+}
+
+.mailing-list-signup .footer-alerts h1 {
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 10px;
+}
+
+.PaneFooter .mailing-list-signup span.close {
+    cursor: pointer;
+}
+
+.PaneFooter .mailing-list-signup span.close:after {
+    color: #9f9f9f;
+    content: "\f00d";
+    cursor: pointer;
+    display: inline-block;
+    font-family: FontAwesome;
+    font-size: 16px;
+    position: absolute;
+    right: 20px;
+    top: 12px;
+}
+
+.PaneFooter .footer-contactus {
+    border-left: 1px solid #ddd;
+}
+
+.PaneFooter2 > span {
+    background-color: #00305a;
+    color: #fff;
+    display: block;
+    padding: 15px 25px;
+    width: 100%;
+}
+
+.PaneFooter2 .footer-copyright a,
+.footer-navigation a {
+    color: #FFF;
+    font-size: 12px;
+}
+
+.PaneFooter2 .footer-copyright a:hover,
+.footer-navigation a:hover {
+    color: #ddb208;
+}
+
+.footer-navigation .level2 {
+    display: none;
+}
+
+.footer-navigation ul li {
+    display: inline-block;
+    padding: 0 0 0 16px;
+}
+
+.footer-navigation ul.level1 li:first-child {
+    padding-left: 0;
+}
+
+.footer-navigation ul.level1 li .legal-link,
+.footer-navigation ul.level1 li .subscribe-link {
+    display: none;
+}
+
+.PaneFooter2 .primary-navigation,
+.PaneFooter2 .footer-copyright {
+    line-height: 25px;
+    overflow: hidden;
+}
+
+.PaneFooter2 .primary-navigation {
+    text-align: right;
+}
+
+.footer-contactus p {
+    font-size: 14px;
+    margin: 0 0 10px;
+}
+
+.PaneFooter .footer-contactus h2 {
+    display: inline-block;
+}
+
+.PaneFooter .footer-contactus,
+.PaneFooter .subscribe-button-section h3 {
+    font-size: 24px;
+}
+
+.PaneFooter .footer-contactus:before {
+    content: "\e63f";
+    vertical-align: middle;
+    font-family: "q4icons";
+    color: #004d7e;
+}
+
+.PaneFooter .subscribe-button-section h3:before {
+    content: "\e633";
+    padding-right: 10px;
+    vertical-align: middle;
+    font-family: "q4icons";
+    color: #004d7e;
+}
+
+@media screen and (max-width: 980px) {
+
+    .footer-contactus h2 {
+        margin-bottom: 0;
+    }
+
+    .footer-logo {
+        height: 158px;
+        padding: 30px 15px 0 0;
+    }
+
+    .PaneFooter .footer-contactus span {
+        display: inline-block;
+    }
+
+    .PaneFooter2 .primary-navigation,
+    .PaneFooter2 .footer-copyright {
+        line-height: 20px;
+        text-align: center;
+        width: 100%;
+    }
+
+    .PaneFooter2 > span {
+        padding: 5px 25px;
+    }
+
+    .PaneFooter .FooterPaneDiv {
+        padding: 25px;
+    }
+}
+
+@media screen and (max-width: 776px) {
+
+    .subscribe-button-section.col-md-1-of-2 {
+        padding: 0;
+        width: 100%;
+    }
+
+    .footer-logo.col-md-1-of-2 {
+        border: 0 none;
+        display: block;
+        height: auto;
+        margin: 0 auto;
+        padding: 0 0 10px;
+        width: 200px;
+    }
+
+    .subscribe-button-section .subscribe-button {
+        margin: 0 auto;
+        display: block;
+    }
+
+    .PaneFooter .subscribe-button-section h3 {
+        margin-bottom: 20px;
+    }
+
+    .PaneFooter .footer-contactus {
+        border-left: 0 none;
+        padding: 37px 0 0;
+        width: 100%;
+    }
+
+    .PaneFooter .mailing-list-signup {
+        left: 0;
+        margin-left: auto;
+        margin-right: auto;
+        right: 0;
+    }
+
+    .PaneFooter2 .primary-navigation {
+        display: none;
+    }
+
+    .PaneFooter2 > span {
+        padding: 12px 0;
+    }
+
+    .PaneFooter .footer-contactus .ModuleTitle {
+        margin: 0;
+    }
+}
+
+@media (max-width: 768px) and (min-width: 480px) {
+    .redactor-img.redactor-img-right {
+        display: block;
+        margin: 0 auto;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    div {
+        border: 0 solid black;
+    }
+
+    .PaneFooter .mailing-list-signup {
+        top: -348px;
+        width: 254px;
+    }
+
+    .redactor-img.redactor-img-right {
+        width: auto;
+    }
+
+    .mobile-toggle {
+        top: -50px;
+    }
+
+    .PaneFooter2 .footer-navigation ul.level1 {
+        display: none;
+    }
+
+    .PaneFooter2 .footer-copyright a {
+        display: block;
+    }
+}
+
+/*--------------- Footer CSS End ---------------*/
+
+/*--------------- Left Pane CSS Start ---------------*/
+
+.PaneLeft .SecondaryNav {
+    padding-right: 8px;
+}
+
+.PaneLeft .SecondaryNav ul.level1 > li {
+    display: none;
+}
+
+.PaneLeft .SecondaryNav ul.level1 > li.expanded,
+.PaneLeft .SecondaryNav ul.level1 > li.selected,
+.investor_banner .PaneLeft .SecondaryNav ul.level1 > li.expanded > a,
+.investor_banner .PaneLeft .SecondaryNav ul.level1 > li.selected > a {
+    display: block;
+}
+
+.PaneLeft .SecondaryNav ul.level1 > li.expanded > a,
+.PaneLeft .SecondaryNav ul.level1 > li.selected > a {
+    display: none;
+}
+
+.PaneLeft .SecondaryNav ul.level2 > li {
+    border-top: 1px solid #ddd;
+    margin-bottom: 5px;
+    padding: 5px 0 0;
+}
+
+.PaneLeft .SecondaryNav ul.level2 > li a {
+    display: inline-block;
+    padding: 0;
+}
+
+.PaneLeft .primary-navigation.col.col-2-of-3 {
+    width: 100%;
+    padding: 0;
+}
+
+.PaneLeft .SecondaryNav ul.level2 > li:first-child {
+    border-top: 0 none;
+}
+
+.PaneLeft .SecondaryNav ul > li.expanded > a,
+.PaneLeft .SecondaryNav ul > li.selected > a,
+.PaneLeft .SecondaryNav ul.level2 > li a:hover {
+    color: #ddb208;
+    text-decoration: none;
+}
+
+.PaneLeft .SecondaryNav ul.level3 {
+    padding: 0 0 0 25px;
+}
+
+.PaneLeft .SecondaryNav ul.level3 > li {
+    padding: 3px 0;
+}
+
+.PaneLeft {
+    padding: 6px 0 0;
+}
+
+.PaneContent {
+    width: 79.967%;
+}
+
+/*--------------- Left Pane CSS End ---------------*/
+
+/*--------------- Inner Global CSS Start ---------------*/
+
+.milestones-timelines {
+    padding-bottom: 18px;
+}
+
+.milestones-timelines h4 {
+    padding-bottom: 15px;
+}
+
+.aboutus_banner .inner-heading {
+    background-image: url("../images/banner/investor-bg.jpg");
+}
+
+.aboutus_banner.overview .innerpage-banner {
+    background-image: url(../images/banner/about-us-lastes_banner.jpg);
+}
+
+.aboutus_banner .innerpage-banner {
+    background-image: url("../images/banner/about-us_banner.jpg");
+}
+
+.projects_banner .inner-heading,
+.jobs_banner .inner-heading {
+    background-image: url("../images/banner/projects-bg.jpg");
+}
+
+.projects_banner .innerpage-banner {
+    background-image: url("../images/banner/projects-banner.jpg");
+}
+
+.citizenship_banner.health-banner .innerpage-banner {
+    background-image: url(../images/banner/health-banner.jpg);
+}
+
+.projects_banner.phase2-banner .innerpage-banner {
+    background-image: url(../images/banner/phase2-banner-inner.jpg);
+}
+
+.projects_banner.exploration .innerpage-banner {
+    background-image: url(../images/banner/exploration-banner.jpg);
+}
+
+.citizenship_banner.our-people-banner .innerpage-banner {
+    background-image: url(../images/banner/our-people-banner.jpg);
+}
+
+.projects_banner.reserves-and-resources .innerpage-banner {
+    background-image: url(../images/banner/projects-banner-reserves-and-resources.jpg);
+}
+
+.projects_banner.technical-reports .innerpage-banner {
+    background-image: url(../images/banner/technical-reports-banner.jpg);
+}
+
+.investor_banner .inner-heading,
+.inner-heading {
+    background-image: url("../images/banner/investor-bg.jpg");
+}
+
+.news-page .inner-heading {
+    background-image: url("../images/banner/newsdetails-bg.jpg");
+}
+
+.aboutus_banner.executiveteam_bod .innerpage-banner {
+    background-image: url('../images/banner/ASK-161114-0212.jpg');
+}
+
+.investor_banner .innerpage-banner {
+    background-image: url(../images/banner/investor-banner-landing.jpg);
+}
+
+.news-page .innerpage-banner, .contact-page .innerpage-banner {
+    background-image: url(../images/banner/news-banner.jpg);
+}
+
+.citizenship_banner .inner-heading {
+    background-image: url("../images/banner/citizenship-bg.jpg");
+}
+
+.citizenship_banner .innerpage-banner {
+    background-image: url("../images/banner/citizenship-banner.jpg");
+}
+
+.jobs_banner .innerpage-banner {
+    background-image: url("../images/banner/jobs-employee-banner.jpg");
+}
+
+.corporate-governance .innerpage-banner {
+    background-image: url(../images/banner/corporate-governance_banner.jpg);
+}
+
+.jobs_banner .reports-section {
+    width: 100%;
+    margin: 25px 0;
+}
+
+.jobs_banner .reports-section .ModuleDate {
+    padding: 0;
+}
+
+.jobs_banner .reports-section .ModuleHeadline:before {
+    margin-right: 10px;
+    line-height: 0.5;
+}
+
+.jobs_banner .reports-section .no-opening {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    background: #f7f2e8;
+}
+
+.reports-section ul.items li .no-opening {
+    display: none;
+}
+
+@media screen and (max-width: 768px) {
+    .jobs_banner .events-header {
+        display: none;
+    }
+
+    .jobs_banner .ModuleHeadlineLink:before,
+    .jobs_banner .moduleiconlink:before,
+    .jobs_banner .ModuleDate:before {
+        font-weight: 600;
+        font-size: 16px;
+        display: block;
+    }
+
+    .jobs_banner .ModuleHeadlineLink:before {
+        content: "Vacancy : ";
+    }
+
+    .jobs_banner .moduleiconlink:before {
+        content: "Job Application & Description : ";
+        margin-bottom: 5px;
+    }
+
+    .jobs_banner .ModuleDate:before {
+        content: "Deadline Date : ";
+    }
+
+    .jobs_banner .downloadlist-section .ModuleHeadlineLink, .jobs_banner .downloadlist-section .moduleiconlink,
+    .jobs_banner .downloadlist-section .ModuleDate {
+        display: block;
+        width: 100%;
+    }
+}
+/*--------------- Inner Global CSS End ---------------*/
+
+/*---------------Home Page CSS Start ---------------*/
+
+.LayoutHomePage [class*="ContentPaneDiv"] > div.module-email-unsub-content.subscribe-text {
+    display: block;
+}
+
+.landing-map, .quick-facts {
+    background-size: cover;
+    min-height: 491px;
+}
+
+.landing-map {
+    background-image: url("../images/landing-page/landing-map-image.jpg");
+    background-position-y: bottom;
+    background-repeat: no-repeat;
+}
+
+.quick-facts {
+    background-image: url("../images/landing-page/blue-landing-bg-img.png");
+    color: #fff;
+}
+
+.content-padding {
+    padding: 60px;
+}
+
+.aboutus-overview-container .content-padding {
+    padding: 30px 60px;
+}
+
+.PageHome .content-padding h2 {
+    line-height: 40px;
+}
+
+.quick-facts h2 {
+    color: #fff;
+    font-size: 30px;
+    font-weight: 200;
+    margin-bottom: 30px;
+}
+
+.quick-facts li {
+    padding: 0;
+}
+
+.LayoutHomePage [class*="ContentPaneDiv"] > div.layout-gride {
+    display: none;
+}
+
+.LayoutHomePage .PaneContent {
+    width: 100%;
+}
+
+.latest-section .ModuleTitle:before {
+    font-family: "q4icons";
+    padding-right: 10px;
+}
+
+.latest-events .ModuleTitle:before {
+    content: "\e630";
+}
+
+.latest-documents span.ModuleTitle:before {
+    content: "\e90d";
+}
+
+.latest-news .ModuleTitle:before {
+    content: "\e632";
+}
+
+.latest-news .select-years {
+    display: none;
+}
+
+.latest-news {
+    background-color: #f7f2e8;
+    padding: 20px;
+}
+
+.latest-news .ModuleDate,
+.latest-events .date {
+    background-image: url("../icons/section-icon.png");
+    background-position: left 3px;
+    background-repeat: no-repeat;
+    color: #333;
+    display: block;
+    font-weight: 700;
+    line-height: 100%;
+    padding: 0 0 8px 16px;
+}
+
+.latest-news .NewsItemRow,
+.latest-events .itemList {
+    margin-top: 12px;
+}
+
+.latest-events .events-location {
+    display: block;
+}
+
+.latest-news .ModuleHeadlineLink,
+.latest-events .itemTitle {
+    border-bottom: 1px solid #e0ded9;
+    display: block;
+    line-height: 25px;
+    margin: 0 0 0 15px;
+    padding: 0 0 12px;
+}
+
+.latest-documents {
+    background-color: #f7f2e8;
+    margin: 0 3.3%;
+    padding: 20px;
+}
+
+.latest-section {
+    margin-bottom: 25px;
+    min-height: 370px;
+    width: 31.125%;
+}
+
+.latest-documents .ModuleYearNavContainer,
+.latest-documents .ModuleHeader,
+.latest-documents .ModuleDate,
+.latest-documents .ModuleFileSizeText {
+    display: none;
+}
+
+.latest-documents .ModuleItemRow {
+    background-color: #fff;
+    border-bottom: 1px solid #ccc;
+    margin: 0 0 5px;
+}
+
+.latest-documents .ModuleHeadlineLink {
+    display: block;
+    line-height: 25px;
+    padding: 10px 20px;
+}
+
+.latest-events {
+    background-color: #f7f2e8;
+    padding: 20px;
+}
+
+.latest-events .docs {
+    display: none;
+}
+
+.latest-documents .sr-only {
+    clip: auto;
+    float: right;
+    font-size: 0;
+    height: auto;
+    margin: 0;
+    overflow: hidden;
+    padding: 0;
+    position: relative;
+    width: auto;
+}
+
+.latest-documents .sr-only:before {
+    color: #004d7e;
+    content: "\f0da";
+    display: inline-block;
+    font-family: FontAwesome;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1;
+    vertical-align: middle;
+    transition: color 0.2s ease-in-out 0s, background 0.2s ease-in-out 0s;
+}
+
+.latest-documents .ModuleHeadlineLink:hover .sr-only:before {
+    color: #ddb208;
+}
+
+.landing-page-slider .slick-slider .slick-prev,
+.landing-page-slider .slick-slider .slick-next {
+    display: none !important; /* Replace the inline style */
+}
+
+.landing-page-slider .slick-slider:hover .slick-prev,
+.landing-page-slider .slick-slider:hover .slick-next {
+    display: block !important; /* Replace the inline style */
+}
+
+.landing-page-slider .slick-dots li button {
+    background-color: #FFF;
+    opacity: 0.6;
+    filter: alpha(opacity=60);
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    display: block;
+    height: 12px;
+    text-indent: 100%;
+    -webkit-transition: all 0.2s ease-in-out 0s;
+    -moz-transition: all 0.2s ease-in-out 0s;
+    -o-transition: all 0.2s ease-in-out 0s;
+    transition: all 0.2s ease-in-out 0s;
+    white-space: nowrap;
+    width: 12px;
+}
+
+.landing-page-slider .slick-dots li.slick-active button {
+    background-color: #FFF;
+    opacity: 0.9;
+    filter: alpha(opacity=90);
+    -ms-transform: scale(1.3);
+    -webkit-transform: scale(1.3);
+    transform: scale(1.3);
+}
+
+.landing-page-slider .slick-dots li button:before,
+#maincontent .PaneBreadcrumb {
+    display: none;
+}
+
+.landing-page-slider .slider .slider-item {
+    min-height: 610px;
+}
+
+.landing-page-slider {
+    position: relative;
+}
+
+.landing-slider-bg {
+    background-image: url("../design/slider-bg.png");
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    bottom: 0;
+    height: 130px;
+    position: absolute;
+    width: 100%;
+    z-index: 1000;
+}
+
+.landing-slider-bg > h1 {
+    color: #fff;
+    display: none;
+    line-height: 150px;
+    margin: 0 auto;
+    max-width: 1200px;
+    padding: 0 35px;
+    text-transform: uppercase;
+}
+
+@media screen and (max-width: 1200px) {
+
+    .landing-slider-bg {
+        height: 113px;
+    }
+
+    .landing-slider-bg > h1 {
+        font-size: 25px;
+        line-height: 109px;
+    }
+
+    .slick-dots {
+        bottom: 29px;
+    }
+
+    .latest-section {
+        min-height: 400px;
+    }
+
+    .landing-map, .quick-facts {
+        min-height: 618px;
+    }
+
+    .landing-map {
+        background-size: cover;
+    }
+}
+
+@media screen and (max-width: 980px) {
+    .landing-slider-bg {
+        background-size: cover;
+        height: 143px;
+    }
+
+    .landing-slider-bg > h1 {
+        line-height: 100%;
+        max-width: 980px;
+        padding: 25px;
+    }
+
+    .slick-dots {
+        bottom: 46px;
+    }
+
+    .latest-documents .ModuleHeadlineLink {
+        display: table;
+        width: 100%;
+    }
+
+    .latest-documents .sr-only,
+    .latest-documents .ModuleHeadline {
+        display: table-cell;
+        float: none;
+        vertical-align: middle;
+    }
+
+    .latest-documents .ModuleHeadline {
+        width: 97%;
+    }
+
+    .latest-section {
+        min-height: 450px;
+    }
+
+    .landing-map, .quick-facts {
+        min-height: 737px;
+    }
+
+    .latest-news .ModuleDate, .latest-events .date {
+        background-image: url("../icons/section-icon.png");
+        font-size: 13px;
+        line-height: 20px;
+        padding: 0 0 2px 16px;
+    }
+}
+
+@media screen and (max-width: 776px) {
+    .slick-dots {
+        bottom: 12px;
+    }
+
+    .landing-slider-bg > h1 {
+        line-height: 100px;
+        padding: 10px 25px;
+    }
+
+    .LayoutHomePage [class*="ContentPaneDiv"] > div {
+        display: block;
+    }
+
+    .latest-section {
+        width: auto;
+        min-height: 100%;
+    }
+
+    .latest-documents {
+        margin: 20px 0;
+    }
+
+    .landing-map, .quick-facts {
+        display: block;
+        min-height: 482px;
+        width: 100%;
+    }
+
+    .inner-heading h1 {
+        line-height: 30px;
+        padding: 0 0 30px;
+    }
+
+    .inner-heading h1 > span {
+        display: block;
+        width: 100%;
+    }
+
+    .inner-heading .ContentContainer > div:first-child,
+    .inner-heading .header-banner {
+        display: inline-block;
+        width: 50%;
+    }
+
+    .Breadcrumb.global-titles a,
+    .page-title .Breadcrumb.global-titles {
+        font-size: 30px;
+    }
+
+    .latest-news .ModuleDate, .latest-events .date {
+        font-size: 15px;
+    }
+
+    .latest-documents .sr-only:before {
+        float: right;
+    }
+
+    .landing-map, .quick-facts {
+        min-height: 362px;
+    }
+}
+
+@media screen and (max-width: 650px) {
+
+    .landing-slider-bg {
+        height: auto;
+        padding: 0 0 50px;
+        text-align: center;
+    }
+
+    .landing-slider-bg > h1 {
+        font-size: 20px;
+        line-height: 30px;
+        padding: 20px 20px 30px;
+    }
+
+    .slick-dots {
+        right: 0;
+        text-align: center;
+    }
+
+    .Breadcrumb.global-titles a,
+    .page-title .Breadcrumb.global-titles {
+        font-size: 26px;
+        line-height: 24px;
+    }
+
+    .inner-heading .ContentContainer > div:first-child,
+    .inner-heading .header-banner {
+        display: block;
+        width: 100%;
+    }
+
+    .Breadcrumb.global-titles {
+        line-height: 100%;
+        margin: 0;
+        padding: 0 0 15px;
+    }
+
+    .inner-heading h1 {
+        font-size: 18px;
+        padding: 0 0 18px;
+    }
+}
+
+/*--------------- Home Page CSS End ---------------*/
+
+/*--------------- Aboutus overview CSS Start ---------------*/
+
+.aboutus-overview-container .aboutus-overview {
+    margin-bottom: 25px;
+}
+
+.aboutus-overview-container .vision-section.aboutus-overview,
+.aboutus-overview-container .responsiblebusiness-section.aboutus-overview,
+.aboutus-overview-container .environmental-section {
+    margin-bottom: 0;
+}
+
+.aboutus-overview-container .overview-content {
+    color: #fff;
+}
+
+.aboutus-overview-container .overview-content h3,
+.principles-intro h3 {
+    font-size: 30px;
+    font-weight: 200;
+    line-height: 40px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.aboutus-overview-container .classasset-section .overview-content {
+    color: #333;
+}
+
+.aboutus-overview-container .vision-section .overview-content,
+.aboutus-overview-container .respectedmanagement-section .overview-content,
+.principles-intro.overview-content,
+.environmental-section .overview-content {
+    background-image: url("../design/overview-vision-bg.png");
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    color: #fff;
+}
+
+.aboutus-overview-container .classasset-section {
+    background-color: #eee4d2;
+}
+
+.aboutus-overview-container .lowcostproduction-section {
+    background-color: #80a0b5;
+}
+
+.organicexpansion-section {
+    background-color: #909932;
+}
+
+.stablemining-section {
+    background-color: #f48f27;
+}
+
+.responsiblebusiness-section {
+    background-color: #740034;
+}
+
+.aboutus-overview .background-bg {
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.principles-intro-bg.background-bg,
+.principles-intro.overview-content {
+    display: inline-block;
+}
+
+.background-bg, .overview-content {
+    display: table-cell;
+}
+
+.vision-section .background-bg {
+    background-image: url("../images/projects/ASK-150119-0021.jpg");
+}
+
+.responsiblebusiness-section .background-bg {
+    background-image: url("../images/projects/responsible-miner_vision_about-us.jpg");
+}
+
+.classasset-section .background-bg {
+    background-image: url("../images/projects/lwca.png");
+    background-size: 100% auto;
+}
+
+.lowcostproduction-section .background-bg {
+    background-image: url("../images/projects/2015-12-16-Near-Term-Production.png");
+}
+
+.organicexpansion-section .background-bg {
+    background-image: url("../images/projects/organic_growth_about_us.jpg");
+}
+
+.stablemining-section .background-bg {
+    background-image: url("../images/projects/Ghana-Flag.jpg");
+}
+
+.respectedmanagement-section .background-bg {
+    background-image: url("../images/projects/mgmt_team_about_us.jpg");
+}
+
+@media screen and (max-width: 776px) {
+
+    .PaneLeft {
+        display: none;
+    }
+
+    .PaneContent {
+        padding-left: 0;
+        width: 100%;
+    }
+
+    .aboutus-overview-container .background-bg,
+    .aboutus-overview-container .overview-content {
+        display: block;
+        width: 100%;
+    }
+
+    .content-padding {
+        padding: 40px;
+    }
+
+    .content-padding p {
+        margin-bottom: 0;
+    }
+
+    .aboutus-overview-container .overview-content h3,
+    .principles-intro h3 {
+        margin-bottom: 15px;
+    }
+
+    .background-bg, .overview-content,
+    .principles-intro-bg.background-bg,
+    .principles-intro.overview-content {
+        display: block;
+    }
+}
+
+/*--------------- Aboutus overview CSS End ---------------*/
+
+/*--------------- Corporate Directory CSS End ---------------*/
+
+.corporate-directory .header {
+    color: #fff;
+    font-size: 18px;
+    font-weight: 400;
+    margin: 0 0 18px;
+}
+
+.corporate-directory .directory-list a {
+    color: #fff;
+}
+
+.corporate-directory .directory-list a:hover {
+    color: #ff99c7;
+}
+
+.padding-small {
+    padding: 20px;
+}
+
+.corporate-directory .directory-list {
+    line-height: 26px;
+}
+
+.corporate-directory .directory-list-bottom {
+    margin-bottom: 0;
+    min-height: 100%;
+}
+
+.corporate-directory {
+    color: #fff;
+    display: table;
+    padding-top: 20px;
+}
+
+.corporate-directory .directory-list {
+    display: table-cell;
+}
+
+.corporate-directory .listings-section {
+    background-color: #909932;
+}
+
+.corporate-directory .directors-section {
+    background-color: #003c70;
+}
+
+.corporate-directory .corporate-office-section {
+    background-color: #740034;
+}
+
+.corporate-directory .south-africa-office {
+    background-color: #80a0b5;
+}
+
+.corporate-directory .ghana-office-section {
+    background-color: #f48f27;
+}
+
+.corporate-directory .transfer-agent-section {
+    background-color: #c19a5d;
+}
+
+.corporate-directory .attorneys-section {
+    background-color: #909932;
+}
+
+.corporate-directory .directory-bank-section {
+    background-color: #00305a;
+    background-image: url("../design/overview-vision-bg.png");
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    color: #fff;
+}
+
+@media screen and (max-width: 776px) {
+    .corporate-directory .directory-list {
+        display: block;
+        width: auto;
+    }
+}
+
+/*--------------- Corporate Directory CSS End ---------------*/
+
+
+/*--------------- Corporate Governance CSS Start ---------------*/
+
+.reports-section .ModuleHeader,
+.reports-section .ModuleFileSizeText,
+.corporate-governance-report .ModuleHeader,
+.corporate-governance-report .ModuleFileSizeText {
+    display: none;
+}
+
+.corporate-governance-report .ModuleItemRow {
+    border-bottom: 1px solid #ddd;
+}
+
+.corporate-governance-report .modulethumbnail-section,
+.corporate-governance-report .downloadlist-section {
+    padding: 10px;
+    vertical-align: middle;
+}
+
+.corporate-governance-report .modulethumbnail-section {
+    width: 20%;
+}
+
+.corporate-governance-report .downloadlist-section {
+    padding: 0;
+    width: 79%;
+}
+
+.corporate-governance-report .ModuleDate {
+    display: block;
+}
+
+.corporate-governance-report .ModuleThumbnail {
+    display: block;
+    height: 130px;
+    overflow: hidden;
+}
+
+.corporate-governance-whistleblower {
+    margin-top: 18px;
+}
+
+@media screen and (max-width: 650px) {
+
+    .corporate-governance-report .modulethumbnail-section {
+        display: none;
+    }
+
+    .corporate-governance-report .downloadlist-section {
+        padding: 10px 0;
+        width: auto;
+    }
+}
+
+/*--------------- Corporate Governance CSS Start ---------------*/
+
+/*--------------- Products- Phase 1 page CSS Start ---------------*/
+
+.key-metrics-section {
+    border: 3px solid #c19a5d;
+    margin: 0 0 20px;
+    padding: 12px 8px;
+}
+
+.key-metrics-section h3 {
+    color: #c19a5d;
+    font-size: 26px;
+    font-weight: 100;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.key-metrics-section > ul {
+    padding-left: 7px;
+}
+
+.img-pstn-center.geology .img-center {
+    width: 100%;
+}
+
+.phase-one-module .overview-section p,
+.exploration-module p {
+    margin-top: 0;
+}
+
+.phase-one-module .overview-section h4 {
+    margin-bottom: 10px;
+}
+
+.phase-one-module .phase-content {
+    display: inline-block;
+    padding-bottom: 30px;
+}
+
+.phase-one-module .redactor-img {
+    float: left;
+    margin: 0 20px 0 0;
+}
+
+.phase2 .uk-table {
+    width: 100%;
+}
+
+.phase2 .uk-table p {
+    margin: 10px 0;
+}
+
+.phase2 .uk-table tr.even, .uk-table-striped tbody tr:nth-of-type(odd) {
+    background: #f7f2e8;
+}
+
+.phase2 .uk-table tr {
+    border-bottom: 1px solid #c19a5d;
+}
+
+.phase2 .uk-table td {
+    padding: 10px;
+}
+
+.phase2 .uk-table td, .uk-table th {
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+}
+
+.phase2 .uk-table {
+    margin-bottom: 30px;
+}
+
+/*--------------- Products- Phase 1 page CSS End ---------------*/
+
+/*--------------- Technical Reports page CSS Start ---------------*/
+
+.reports-section .ModuleItemRow {
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+}
+
+.reports-section .ModuleDate {
+    padding: 0 30px;
+}
+
+.reports-section .ModuleHeadline {
+    display: inline-block;
+}
+
+.reports-section .ModuleHeadline:before,
+.module-citizen-reports .ModuleHeadline:before {
+    content: "\f1c1";
+    float: right;
+    font-family: FontAwesome;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1;
+    margin-right: -30px;
+}
+
+.reports-section .ModuleContainerInner {
+    margin-top: -10px;
+}
+
+.technical-reports .moduleiconlink {
+    padding-left: 70px;
+}
+
+@media screen and (max-width: 980px) {
+
+    .reports-section .ModuleDate {
+        padding: 0 15px;
+    }
+
+    .reports-section .ModuleHeadline {
+        padding-right: 49px;
+    }
+
+    .jobs_banner .reports-section .ModuleHeadline {
+        padding-right: 0;
+    }
+}
+
+@media screen and (max-width: 650px) {
+
+    .reports-section .ModuleDate {
+        padding: 0 10px 0 0;
+    }
+
+    .reports-section .ModuleHeadline {
+        padding-right: 0;
+    }
+
+    .reports-section .ModuleItemRow {
+        padding: 10px;
+    }
+
+    .technical-reports .moduleiconlink {
+        padding-left: 0;
+    }
+}
+
+/*--------------- Technical Reports page CSS End ---------------*/
+
+/*--------------- Reserves and Resources page CSS End ---------------*/
+
+sup {
+    display: inline-block;
+    font-size: 12px;
+    margin-top: -6px;
+    vertical-align: top;
+}
+
+.table-content > table {
+    width: 100%;
+    font-size: 100%;
+}
+
+.table-content thead tr {
+    background-color: #c19a5d;
+    color: #fff;
+}
+
+.table-content td, .table-content th {
+    border-bottom: 1px solid #ddd;
+    padding: 8px;
+    vertical-align: middle;
+}
+
+.table-content td.td-rightalign {
+    text-align: right;
+    padding-right: 30px;
+}
+
+.table-content tbody tr {
+    background-color: #f7f2e8;
+}
+
+.table-content tbody tr.alt-tablerow {
+    background-color: #fff;
+}
+
+.table-content b {
+    font-weight: 700;
+}
+
+.table-content .table-font-small {
+    font-size: 12px;
+}
+
+.table-content p {
+    margin: 0;
+}
+
+.table-content {
+    overflow-y: hidden;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.table-content.reserve-statement {
+    padding: 0 0 9px;
+}
+
+/*--------------- Reserves and Resources page CSS End ---------------*/
+
+/*--------------- Photo Gallery page CSS Start ---------------*/
+
+.photo-gallery-module .ModuleSeparator,
+.photo-gallery-module .ModuleHeader,
+.photo-gallery-module .ModuleFileSizeText,
+.photo-gallery-module .ModuleHeadlineLink {
+    display: none;
+}
+
+.photo-gallery-module .ModuleDate {
+    color: #fff;
+    display: inline-block;
+    font-size: 16px;
+    left: 15%;
+    position: absolute;
+    text-align: center;
+    top: 40%;
+    vertical-align: middle;
+    width: 85%;
+    opacity: 0;
+    filter: alpha(opacity=0);
+    -webkit-transition: opacity 0.15s linear 0s;
+    -moz-transition: opacity 0.15s linear 0s;
+    -o-transition: opacity 0.15s linear 0s;
+    transition: opacity 0.15s linear 0s;
+}
+
+.photo-gallery-module .ModuleItemRow {
+    cursor: pointer;
+    display: inline-block;
+    margin-top: 18px;
+    position: relative;
+    width: 24.5%;
+    -webkit-transition: color 0.2s ease-in-out 0s, background 0.2s ease-in-out 0s;
+    -moz-transition: color 0.2s ease-in-out 0s, background 0.2s ease-in-out 0s;
+    -o-transition: color 0.2s ease-in-out 0s, background 0.2s ease-in-out 0s;
+    transition: color 0.2s ease-in-out 0s, background 0.2s ease-in-out 0s;
+}
+
+.photo-gallery-module .month-year-text {
+    color: #444;
+    font-size: 18px;
+    line-height: 24px;
+}
+
+.photo-gallery-module .ModuleItemRow:hover .sr-only,
+.photo-gallery-module .ModuleItemRow:hover .ModuleDate {
+    background-color: transparent;
+    opacity: 1;
+    filter: alpha(opacity=90);
+}
+
+.photo-gallery-module .ModuleThumbnail {
+    background-color: #000;
+}
+
+.photo-gallery-module .ModuleItemRow:hover .ModuleThumbnailImage {
+    opacity: 0.7;
+    filter: alpha(opacity=70);
+    -webkit-transition: opacity 0.15s linear 0s;
+    -moz-transition: opacity 0.15s linear 0s;
+    -o-transition: opacity 0.15s linear 0s;
+    transition: opacity 0.15s linear 0s;
+}
+
+.photo-gallery-module .downloadlist-section {
+    background-color: transparent;
+    line-height: 100%;
+    opacity: 1;
+    position: static;
+}
+
+.photo-gallery-module .ModuleThumbnail .sr-only {
+    background-color: transparent;
+    clip: auto;
+    font-size: 0;
+    height: 100%;
+    left: 16%;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    width: 84%;
+    z-index: 1;
+}
+
+.photo-gallery-module .ModuleDate:before {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+}
+
+.photo-gallery-module .ModuleTitle,
+.photo-gallery-module h2 {
+    margin: 0;
+}
+
+.photo-gallery-module .modulethumbnail-section {
+    padding-left: 35px;
+}
+
+.photo-gallery-module .ModuleContainerInner {
+    margin-left: -35px;
+}
+
+.photo-gallery-module .month-year-container.month-separator {
+    display: block;
+    margin-bottom: -7px;
+    padding-top: 20px;
+}
+
+.photo-gallery-module .month-year-container {
+    display: none;
+}
+
+.photo-gallery-module .ModuleThumbnailImage,
+.photo-gallery-module .ModuleThumbnail {
+    display: block;
+}
+
+@media screen and (max-width: 980px) {
+
+    .table-content table {
+        width: 100%;
+    }
+
+    .photo-gallery-module .ModuleItemRow {
+        width: 32.6%;
+    }
+
+    .photo-gallery-module .modulethumbnail-section {
+        padding-left: 20px;
+    }
+
+    .photo-gallery-module .ModuleContainerInner {
+        margin-left: -20px;
+    }
+
+    .photo-gallery-module .downloadlist-section {
+        left: 11%;
+        width: 89%;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .photo-gallery-module .ModuleItemRow,
+    .photo-gallery-module .ModuleThumbnailImage {
+        width: 100%;
+    }
+
+    .photo-gallery-module .downloadlist-section {
+        left: 0;
+        width: 100%;
+    }
+
+    .photo-gallery-module .modulethumbnail-section,
+    .photo-gallery-module .ModuleContainerInner {
+        padding: 0;
+        margin: 0;
+    }
+}
+
+/*--------------- Photo Gallery page CSS End ---------------*/
+
+/*--------------- Citizenship page CSS Start ---------------*/
+
+.citizenship-container .resettlement-section {
+    background-color: #909932;
+}
+
+.resettlement-section .learnmore-button:hover {
+    border: 1px solid #d2d98b;
+    color: #d2d98b;
+}
+
+.citizenship-container .safety_health-section {
+    background-color: #003c70;
+}
+
+.safety_health-section .learnmore-button:hover,
+.environmental-section .learnmore-button:hover {
+    border: 1px solid #5ab2ff;
+    color: #5ab2ff;
+}
+
+.citizenship-container .ourpeople-section {
+    background-color: #740034;
+}
+
+.ourpeople-section .learnmore-button:hover {
+    border: 1px solid #ff74b2;
+    color: #ff74b2;
+}
+
+.citizenship-container .empowerment-section {
+    background-color: #80a0b5;
+}
+
+.empowerment-section .learnmore-button:hover {
+    border: 1px solid #c0d0db;
+    color: #c0d0db;
+}
+
+.citizenship-container .communities-section {
+    background-color: #f48f27;
+}
+
+.communities-section .learnmore-button:hover {
+    border: 1px solid #facea0;
+    color: #facea0;
+}
+
+.principles-intro-bg.background-bg {
+    background-color: #80a0b5;
+    padding: 0;
+}
+
+.principles-intro-bg.background-bg .ModuleContainerInner {
+    padding: 60px;
+}
+
+.principles-intro-bg .ModuleHeadlineLink {
+    border: 1px solid #fff;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    color: #fff;
+    display: block;
+    line-height: 38px;
+    margin: 11px 0 0;
+    min-height: 40px;
+    padding: 0 15px;
+    text-align: center;
+    width: 100%;
+}
+
+.principles-intro-bg .ModuleHeadlineLink:hover {
+    border: 1px solid #c0d0db;
+    color: #c0d0db;
+}
+
+.principles-intro.overview-content {
+    background-position: 0 0;
+    background-size: cover;
+}
+
+.principles-intro-bg .ModuleHeadlineLink .ModuleHeadline:before,
+.our-charters .ModuleHeadlineLink .ModuleHeadline:before {
+    content: "\f019";
+    display: inline-block;
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1;
+}
+
+.principles-intro-bg.background-bg .ModuleHeader,
+.principles-intro-bg.background-bg .ModuleDate,
+.principles-intro-bg.background-bg .ModuleFileSizeText {
+    display: none;
+}
+
+.principles-intro-bg .ModuleThumbnailImage {
+    width: 100%;
+}
+
+.citizenship-container {
+    margin-top: 25px;
+}
+
+.citizenship-page .performance-content {
+    padding-top: 30px;
+}
+
+.HtmlTextContainer .botttom-content {
+    margin-bottom: 0;
+}
+
+.resettlement-section .background-bg {
+    background-image: url("../images/citizenship/resettlement_about_us.jpg");
+}
+
+.Resettlement-module .innerpage-banner {
+    background-image: url(../images/banner/Resettlement-banner.jpg);
+}
+
+.safety_health-section .background-bg {
+    background-image: url("../images/citizenship/csr-safety-health.jpg");
+}
+
+.ourpeople-section .background-bg {
+    background-image: url("../images/citizenship/vision-img.jpg");
+}
+
+.empowerment-section .background-bg {
+    background-image: url("../images/citizenship/csr-empowerment.jpg");
+}
+
+.communities-section .background-bg {
+    background-image: url("../images/citizenship/csr-communities.jpg");
+}
+
+.environmental-section .background-bg {
+    background-image: url("../images/citizenship/csr-envstewardship.jpg");
+}
+
+.list-text {
+    font-weight: 700;
+    margin-bottom: -5px;
+}
+
+.environmental-content .table-content {
+    padding: 10px 0 20px;
+}
+
+.environmental-content strong {
+    font-style: italic;
+}
+
+.environmental-content ul {
+    margin-top: 5px;
+}
+
+.double-section {
+    margin: 30px 0 0;
+    text-align: center;
+}
+
+.double-section p {
+    margin: 0;
+}
+
+.double-section > div:first-child img {
+    padding-right: 10px;
+}
+
+.double-section > div:first-child + div > img {
+    padding-left: 10px;
+}
+
+.our-values-section {
+    border: 3px solid #740034;
+    margin-bottom: 30px;
+    padding: 30px;
+}
+
+.our-values-section h2 {
+    color: #740034;
+    font-size: 26px;
+    font-weight: 100;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.our-values-section .table-content > table {
+    width: 100%;
+}
+
+.our-values-section img {
+    max-width: none;
+}
+
+.safety-health-module ul {
+    margin-top: 0;
+}
+
+.safety-health-module .table-content > table {
+    width: 100%;
+}
+
+.safety-health-module .table-content {
+    padding: 10px 0 30px;
+}
+
+.module-citizen-reports .q4-year-container {
+    font-size: 24px;
+    line-height: 30px;
+    margin: 22px 0 5px;
+}
+
+.module-citizen-reports .ModuleHeadlineLink {
+    width: 55%;
+}
+
+.module-citizen-reports .ModuleHeadline {
+    padding-right: 0;
+    position: static;
+    width: auto;
+}
+
+.our-charters .ModuleItemRow > div {
+    padding: 60px;
+}
+
+.our-charters .ModuleThumbnail {
+    display: block;
+}
+
+.our-charters .ModuleThumbnailImage {
+    width: 100%;
+}
+
+.our-charters .ModuleHeadlineLink {
+    background-color: #004d7e;
+    border-radius: 5px;
+    color: #fff;
+    display: block;
+    margin-top: 10px;
+    padding: 25px 15px;
+    text-align: center;
+}
+
+.our-charters .ModuleHeadlineLink:hover {
+    background-color: #003455;
+    color: #fff;
+}
+
+.our-charters .ModuleHeadlineLink .ModuleHeadline:before {
+    padding-right: 10px;
+}
+
+.our-people-content .table-content td {
+    padding: 8px 8px 0 8px;
+}
+
+@media screen and (max-width: 776px) {
+
+    .principles-intro.overview-content,
+    .principles-intro-bg {
+        padding: 0;
+        width: 100%;
+    }
+
+    .principles-intro-bg.background-bg .ModuleContainerInner {
+        padding: 40px;
+    }
+
+    .citizenship-page .content-padding p {
+        margin-bottom: 20px;
+    }
+
+    .PagePageNotFound ul.SiteMapList li {
+        line-height: 7px;
+    }
+
+    .principles-intro-bg.background-bg {
+        min-height: 100% !important; /* Replace Inline style */
+    }
+
+    .principles-intro-bg .ModuleThumbnailImage {
+        width: auto;
+    }
+
+    .background-bg {
+        min-height: 400px;
+    }
+
+    .modulethumbnail-section {
+        text-align: center;
+    }
+
+    .our-charters .ModuleItemRow > div {
+        padding: 10px;
+    }
+}
+
+@media screen and (max-width: 650px) {
+
+    .double-section > div:first-child {
+        padding-bottom: 25px;
+    }
+
+    .reports-section .ModuleHeadline:before,
+    .module-citizen-reports .ModuleHeadline:before {
+        margin-right: 0;
+        padding-top: 6px;
+    }
+
+    .background-bg {
+        min-height: 300px;
+    }
+
+    .our-charters .ModuleHeadlineLink {
+        padding: 10px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .double-section > div:first-child img,
+    .double-section > div:first-child + div > img {
+        padding-right: 0;
+        padding-left 0;
+    }
+
+    .our-values-section {
+        padding: 30px 10px;
+    }
+}
+
+/*--------------- Citizenship page CSS End ---------------*/
+
+/*--------------- Analyst Coverage page CSS Start ---------------*/
+
+.analyst-coverage-module th {
+    font-size: 18px;
+    font-weight: 600;
+    text-align: left;
+}
+
+.analyst-coverage-module .table-content > table {
+    width: 100%;
+}
+
+@media screen and (max-width: 650px) {
+
+    .analyst-coverage-module .table-content thead {
+        display: none;
+    }
+
+    .analyst-coverage-module .table-content td:before {
+        font-weight: 700;
+    }
+
+    .analyst-coverage-module .table-content td:first-child:before {
+        content: "Firm: ";
+    }
+
+    .analyst-coverage-module .table-content td:first-child + td:before {
+        content: "Analyst: ";
+    }
+
+    .analyst-coverage-module .table-content td:first-child + td + td:before {
+        content: "Phone: ";
+    }
+
+    .analyst-coverage-module .table-content tbody tr {
+        border-bottom: 1px solid #ddd;
+        display: block;
+        padding-left: 10px;
+    }
+
+    .analyst-coverage-module .table-content td {
+        border: 0 none;
+        display: block;
+        padding-left: 0;
+    }
+}
+
+/*--------------- Analyst Coverage page CSS End ---------------*/
+
+/*--------------- Investor Shareholder Info CSS Start ---------------*/
+
+.investor_banner .PaneLeft .SecondaryNav ul.level1 > li.expanded > a,
+.investor_banner .PaneLeft .SecondaryNav ul.level1 > li.selected > a {
+    display: inline-block;
+}
+
+.investor_banner .PaneLeft .SecondaryNav ul.level2 > li {
+    padding: 5px 0 0 15px;
+}
+
+.high-charts .highcharts-legend {
+    display: none;
+}
+
+.highcharts-button {
+    cursor: pointer !important; /* Replace inline style */
+}
+
+.highcharts-input-group {
+    display: none;
+}
+
+.stock-information .StockTableFeed {
+    background-color: #00305a;
+    color: #fff;
+    padding: 30px;
+}
+
+.shareholder-info-stockquote h2 {
+    border-bottom: 1px solid #33597b;
+    color: #fff;
+    padding-bottom: 9px;
+}
+
+.stock-information .StockTableItem-fields {
+    display: inline-block;
+    text-align: right;
+    width: 21.2%;
+}
+
+.stock-information .StockTableItem-fields:first-child {
+    width: 15%;
+}
+
+.stock-information .tableitem-left {
+    font-weight: 700;
+    margin: 0;
+}
+
+.stock-information .tableitem-right {
+    margin-bottom: 8px;
+}
+
+.stock-information .StockTableText-TradeDate span {
+    display: block;
+    text-align: right;
+}
+
+.stock-information .StockTableText-TradeDate .TradeDate-delayed {
+    font-size: 12px;
+}
+
+.shareholder-info-container h1 {
+    color: #fff;
+    font-weight: 300;
+}
+
+.shareholder-info-container tr td:first-child + td {
+    text-align: right;
+}
+
+.shareholder-info-container td {
+    padding: 5px 6px;
+}
+
+.share-structure-info {
+    background-color: #c19a5d;
+    color: #fff;
+    padding: 30px;
+}
+
+.top-shareholders-info {
+    background-color: #740034;
+    color: #fff;
+    padding: 30px;
+}
+
+.shareholders-section tr {
+    border-bottom: 1px solid #d6bc94;
+    font-size: 15px;
+    display: table-row;
+}
+
+.shareholders-section .shareholders-source {
+    font-size: 14px;
+}
+
+.top-shareholders-info tr {
+    border-bottom: 1px solid #FFF;
+    display: table-row;
+}
+
+.shareholders-section table {
+    width: 100%;
+}
+
+.presentations-info {
+    background-color: #00305a;
+    background-image: url("../design/overview-vision-bg.png");
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    color: #fff;
+    padding: 30px;
+}
+
+.presentations-info .moduledate,
+.presentations-info .moduletitle,
+.presentations-info .moduleicon {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.presentations-info .moduledate {
+    width: 30%;
+}
+
+.presentations-info .moduletitle {
+    width: 50%;
+}
+
+.presentations-info .moduleicon {
+    width: 20%;
+}
+
+.presentations-info .moduleicon a {
+    color: #279aff;
+    margin-left: 12px;
+}
+
+.presentations-info .moduleicon a:hover {
+    color: #8dcaff;
+}
+
+.presentations-info .presentation-icon:before {
+    content: "\f1c1";
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: 400;
+    padding-right: 5px;
+}
+
+.presentations-info .itemList {
+    border-bottom: 1px solid #ddd;
+    padding: 8px;
+}
+
+.presentations-info .learnmore-button,
+.events-info .learnmore-button {
+    margin-top: 20px;
+    text-shadow: unset;
+}
+
+.shareholder-information-info {
+    background-color: #80a0b5;
+    color: #fff;
+    padding: 30px;
+}
+
+.shareholder-information-info b {
+    font-weight: 700;
+}
+
+.events-info {
+    background-color: #909932;
+    color: #fff;
+    padding: 20px;
+}
+
+.events-info .event-archive a.ModuleHeadlineLink {
+    color: #e1e6b1;
+    font-size: 14px;
+}
+
+.events-info .event-archive a.ModuleHeadlineLink:hover {
+    color: #FFF;
+}
+
+.events-info .event-archive .ModuleHeadlineLink,
+.events-info .event-archive .moduledate {
+    display: inline-block;
+}
+
+.events-info .event-archive .ModuleItemRow {
+    margin: 0;
+}
+
+.events-info .event-archive .ModuleContentContainer {
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 5px;
+    padding: 0 10px 5px;
+}
+
+.quarterly-info {
+    background-color: #f48f27;
+    color: #FFF;
+    padding: 20px;
+}
+
+.quarterly-info .q4-category-text {
+    display: inline-block;
+    width: 55%;
+}
+
+.quarterly-info .q4-financial-documents {
+    display: inline-block;
+    text-align: right;
+    vertical-align: top;
+    width: 45%;
+}
+
+.quarterly-info .q4-financial-document {
+    color: #fff;
+    margin-left: 20px;
+}
+
+.quarterly-info .q4-financial-document:hover {
+    color: #fc0;
+}
+
+.quarterly-info .q4i-icon-html:before,
+.quarterly-reports .q4-financial-document i.PDF:before {
+    content: "\f1c1";
+    font-family: FontAwesome !important;
+    font-style: normal;
+    font-weight: 400;
+    padding-left: 5px;
+}
+
+.quarterly-info .q4-financial-documents > li {
+    display: inline-block;
+}
+
+.quarterly-info .q4-financial-item {
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 5px;
+    padding: 0 10px 5px;
+}
+
+.events-info .ModuleEvent.event-archive,
+.quarterly-info .q4-items-container {
+    padding-bottom: 30px;
+}
+
+.events-info .learnmore-button {
+    margin: 0;
+}
+
+.events-info .learnmore-button:hover {
+    border: 1px solid #d2d98b;
+    color: #d2d98b;
+}
+
+.quarterly-info .learnmore-button:hover {
+    border: 1px solid #facea0;
+    color: #facea0;
+}
+
+.auditors-info {
+    background-color: #740034;
+    color: #fff;
+    padding: 20px;
+}
+
+.auditfees-info {
+    background-color: #80a0b5;
+    color: #fff;
+    padding: 20px;
+}
+
+.auditfees-table thead {
+    background-color: #004d7e;
+    text-align: left;
+}
+
+.auditfees-table th {
+    padding: 10px;
+}
+
+.auditfees-table tr {
+    border-bottom: 1px solid #fff;
+    text-align: left;
+    display: table-row;
+}
+
+.auditfees-table tr td:first-child + td + td {
+    text-align: right;
+}
+
+.shareholder-info-container {
+    padding-top: 20px;
+}
+
+.analyst-coverage-module tr td:first-child + td {
+    text-align: left;
+}
+
+.shareholder-info-stockquote span {
+    font-size: 16px;
+}
+
+[class*="ContentPaneDiv"] .stock-information {
+    display: inline-block;
+    width: 50%;
+}
+
+.stock-information.akg-module {
+    padding-right: 10px;
+}
+
+.stock-information.nyse-module {
+    padding-left: 10px;
+}
+
+.quarterly-info .q4-financial-container.quarterly:first-child {
+    display: block;
+}
+
+.quarterly-info .q4-financial-container.quarterly {
+    display: none;
+}
+
+.share-structure-module .table-content > table,
+.top-shareholders .table-content > table {
+    width: 100%;
+}
+
+.shareholder-info-modules .external-link a:before {
+    content: "\f130";
+    font-family: FontAwesome;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1;
+    color: #279aff;
+}
+
+.shareholder-info-modules .external-link a:hover {
+    color: #8dcaff;
+}
+
+@media screen and (max-width: 980px) {
+    .auditfees-table {
+        overflow-x: auto;
+    }
+
+    .auditfees-table > table {
+        width: 300px;
+    }
+
+    .presentations-info .moduletitle {
+        padding-right: 2%;
+    }
+
+    .presentations-info .moduledate {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 776px) {
+    .shareholder-info-container,
+    [class*="ContentPaneDiv"] .stock-information {
+        display: block;
+        width: 100%;
+    }
+
+    .presentations-info .moduleicon a {
+        margin-left: 0;
+    }
+
+    .presentations-info .moduledate {
+        width: 20%;
+    }
+
+    .shareholder-info-modules .equalheight {
+        min-height: 100% !important; /* Replace inline styles */
+    }
+
+    .auditfees-table > table {
+        width: 100%;
+    }
+
+    .shareholder-info-container {
+        padding-top: 0;
+    }
+
+    .stock-information.akg-module {
+        padding: 0 0 25px;
+    }
+
+    .stock-information.nyse-module {
+        padding-left: 0;
+    }
+
+    .shareholder-info-modules,
+    .analyst-coverage-module.shareholder-info-container {
+        padding-top: 20px;
+    }
+
+    .stock-information .tableitem-right {
+        margin: 0 0 15px;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .events-info .event-archive .ModuleHeadlineLink,
+    .events-info .event-archive .moduledate,
+    .presentations-info .moduletitle,
+    .presentations-info .moduledate,
+    .quarterly-info .q4-category-text,
+    .quarterly-info .q4-financial-documents {
+        display: block;
+        width: auto;
+    }
+
+    .quarterly-info .q4-financial-documents {
+        text-align: left;
+    }
+
+    .presentations-info .moduleicon {
+        text-align: right;
+        width: 100%;
+    }
+
+    .quarterly-reports .q4-financial-documents > li {
+        padding: 0 0 0 30px;
+    }
+
+    .quarterly-reports.quarterly-info .q4-financial-documents {
+        text-align: left;
+    }
+
+    .stock-information .StockTableItem-fields,
+    .stock-information .StockTableItem-fields:first-child {
+        text-align: left;
+        width: 33%;
+    }
+
+    .quarterly-info .q4-financial-document {
+        margin: 0 20px 0 0;
+    }
+
+    .presentations-info .moduleicon {
+        text-align: left;
+    }
+
+    .quarterly-reports.quarterly-info .q4-financial-documents {
+        margin: 5px 0 0;
+    }
+}
+
+@media screen and (max-width: 480px) {
+
+    .stock-information .StockTableItem-fields,
+    .stock-information .StockTableItem-fields:first-child {
+        width: 50%;
+    }
+
+    .our-charters .ModuleItemRow > div {
+        padding: 10px 0 0;
+    }
+}
+
+/*--------------- Investor Shareholder Info CSS End ---------------*/
+
+/*--------------- Quarterly Reports Info CSS End ---------------*/
+
+.quarterly-reports .q4-year-container .q4-year-text,
+.presentations-widget .q4-year-container .q4-year-text {
+    background-color: #dfdfdf;
+    color: #004d7e;
+    cursor: pointer;
+    font-weight: 400;
+    padding: 8px 15px;
+}
+
+.quarterly-reports .q4-year-container .q4-year-text i,
+.presentations-widget .q4-year-container .q4-year-text i {
+    float: right;
+}
+
+.quarterly-reports .q4-category-text,
+.presentations-widget .q4-category-text {
+    color: #333;
+}
+
+.quarterly-reports .q4-quarterly-widget .q4-items-container {
+    padding: 0 0 15px 15px;
+}
+
+.quarterly-info.quarterly-reports {
+    background-color: transparent;
+    padding: 0;
+}
+
+.quarterly-reports .q4-financial-item {
+    border: 0 none;
+    margin: 10px 0 0;
+    padding: 0;
+}
+
+.quarterly-reports .q4-financial-document {
+    color: #004d7e;
+    margin: 0;
+    padding: 0;
+}
+
+.quarterly-reports .q4-financial-document:hover {
+    color: #ddb208;
+}
+
+.quarterly-reports .q4-financial-documents > li {
+    display: inline-block;
+    padding: 0 30px 0 0;
+}
+
+.quarterly-reports .q4-financial-document i.PDF:before {
+    display: inline-block;
+    padding-left: 0;
+    width: 10px;
+    font-size: 16px;
+}
+
+.quarterly-reports .q4-financial-container {
+    padding: 15px 0 0;
+}
+
+.quarterly-reports .q4-financial-container:first-child {
+    padding: 0;
+}
+
+.quarterly-reports.quarterly-info .q4-financial-container.quarterly {
+    display: block;
+}
+
+.quarterly-reports.quarterly-info .q4-financial-documents {
+    margin: 0;
+}
+
+/*--------------- Quarterly Reports Info CSS End ---------------*/
+
+
+/*--------------- Presentations page CSS Start ---------------*/
+
+.presentations-widget .present-pagerItem.pager-next.pager-disabled,
+.presentations-widget .present-pagerItem.pager-prev.pager-disabled,
+.presentations-widget .ModulePresentYearContainer {
+    display: none;
+}
+
+.presentations-widget .itemList {
+    border-bottom: 1px solid #ddd;
+    padding: 5px 15px;
+}
+
+.presentations-widget .itemList .ModuleDate,
+.presentations-widget .itemList .ModuleHeadlineLink,
+.presentations-widget .itemList .documents-icon {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.presentations-widget .itemList .ModuleDate {
+    width: 18%;
+}
+
+.presentations-widget .itemList .ModuleHeadlineLink {
+    width: 62%;
+}
+
+.presentations-widget .itemList .documents-icon {
+    margin: 10px 0 6px;
+    width: 20%;
+}
+
+.documents-icon .presentation .icon.PDF:before,
+.documents-icon .news .icon.pdf:before {
+    content: "\f1c1";
+    display: inline-block;
+    font-family: FontAwesome;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1;
+    margin-right: 10px;
+}
+
+.documents-icon .external-link a:before,
+.documents-icon .news .icon.link:before {
+    content: "\f130";
+    font-family: FontAwesome;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1;
+}
+
+.documents-icon .news .icon.link:before {
+    content: "\e628";
+    font-family: "q4icons";
+    font-size: 25px;
+    position: relative;
+    top: 2px;
+}
+
+.page-news-details p,
+.page-news-details a {
+    word-break: break-word;
+}
+
+.pager-next, .pager-prev {
+    cursor: pointer;
+}
+
+.pagination-Message.paginationMessage.hide {
+    display: none;
+}
+
+.presentations-widget {
+    padding-top: 30px;
+}
+
+.pager-prev,
+.pagination-Message,
+.pager-next {
+    margin-top: 20px;
+}
+
+.quarterly .q4-category-text > span {
+    display: inline-block;
+}
+
+@media screen and (max-width: 980px) {
+    .presentations-widget .itemList .ModuleDate {
+        width: 25%;
+    }
+
+    .presentations-widget .itemList .ModuleHeadlineLink {
+        width: 62%;
+    }
+
+    .presentations-widget .itemList .documents-icon {
+        width: 12%;
+    }
+}
+
+@media screen and (max-width: 776px) {
+    .presentations-widget .documents-icon .documents-icon .documents {
+        display: block;
+        padding-bottom: 25px;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .presentations-widget .itemList .ModuleDate,
+    .presentations-widget .itemList .ModuleHeadlineLink,
+    .presentations-widget .itemList .documents-icon {
+        display: block;
+        width: auto;
+    }
+
+    .presentations-widget .documents-icon .documents {
+        display: inline-block;
+        padding-bottom: 0;
+    }
+}
+
+/*--------------- Presentations page CSS End ---------------*/
+
+/*--------------- Events page CSS End ---------------*/
+
+.events-module {
+    padding: 30px 0 0;
+}
+
+.events-module .past-events {
+    margin: 20px 0 0 0;
+}
+
+.events-header {
+    background-color: #c19a5d;
+    color: #fff;
+    padding: 8px;
+}
+
+.events-header > div {
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.events-module .ModuleHeadlineLink {
+    font-size: 14px;
+    margin: 0;
+    padding-right: 20px;
+}
+
+.events-module .ModuleItemRow {
+    border-bottom: 1px solid #ddd;
+    margin: 0;
+    padding: 8px;
+}
+
+.events-module .ModuleItemRow .events-date,
+.events-module .ModuleItemRow .events-information {
+    font-size: 14px;
+    word-wrap: break-word;
+}
+
+.events-information.body-content a {
+    word-wrap: break-word;
+}
+
+.events-module .ModuleItemRow.moduleitem-bg {
+    background-color: #f7f2e8;
+}
+
+.events-module .ModuleItem .events-date {
+    padding-left: 5px;
+}
+
+.events-module .ModuleItem .events-location {
+    padding-left: 10px;
+}
+
+.events-module .ModuleItem .events-information {
+    padding-left: 14px;
+}
+
+.ModuleEventDetails .ModuleBody {
+    border: 0 none;
+    padding: 0;
+}
+
+.ModuleEventDetails .AddToCalendar.show {
+    display: inline-block;
+}
+
+.ModuleEventDetails .AddToCalendar {
+    display: none;
+}
+
+.backtoprevious-section {
+    text-align: left;
+    padding-top: 20px;
+}
+
+.backtoprevious-section .back-button {
+    border: 1px solid #004d7e;
+    border-radius: 5px;
+    padding: 8px 20px;
+}
+
+.backtoprevious-section .back-button:hover {
+    border: 1px solid #ddb208;
+}
+
+.events-module .Future-events {
+    font-weight: 600;
+}
+
+.Future-events.ModuleItemRow.past-events {
+    margin-top: 22px;
+}
+
+.reports span.q4-year-text {
+    color: #444;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+@media screen and (max-width: 650px) {
+
+    .events-module .ModuleEvent.event-archive {
+        overflow-x: auto;
+    }
+
+    .events-module .ModuleEvent.event-archive .ModuleContentContainer {
+        width: 900px;
+    }
+
+    .events-module .events-header > div, .events-module span,
+    .events-module .events-title, .events-module .events-information {
+        display: inline-block;
+        width: 25%;
+    }
+
+    #latest-events {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .events-module .events-header > div,
+    .events-module span,
+    .events-module .events-title {
+        display: inline-block;
+        width: 23%;
+    }
+}
+
+/*--------------- Events page CSS End ---------------*/
+
+/*--------------- News page CSS Start ---------------*/
+.module-pressreleases h2,
+.module-pressreleases .ModuleTitle {
+    margin: 0;
+}
+
+.module-pressreleases .NewsItemRow {
+    border-bottom: 1px solid #ddd;
+    padding: 5px 10px;
+}
+
+.module-pressreleases .ModuleYearNavContainer {
+    margin-top: -29px;
+    padding-bottom: 20px;
+    text-align: right;
+}
+
+.module-pressreleases .newsTitle {
+    width: 60%;
+}
+
+.module-pressreleases .NewsItemRow span {
+    vertical-align: middle;
+}
+
+.module-pressreleases .documents-icon {
+    margin: 6px 0;
+    padding-right: 22px;
+    text-align: right;
+    vertical-align: middle;
+}
+
+.module-pressreleases .documents-icon .documents {
+    padding-left: 10px;
+}
+
+.module-pressreleases .paginationMessage.hide {
+    display: none;
+}
+
+.module-pressreleases .select-years {
+    text-align: left;
+}
+
+.module-pressreleases .sbOptions {
+    width: 110px;
+}
+
+.newsTitle .ModuleHeadlineLink {
+    padding-left: 15px;
+}
+
+.module-pressreleases li br {
+    display: none;
+}
+
+.module-pressreleases .newsTitle .ModuleHeadlineLink {
+    display: inline-block;
+}
+
+@media screen and (max-width: 776px) {
+
+    .module-pressreleases .documents-icon {
+        text-align: left;
+        width: 100%;
+    }
+
+    .module-pressreleases .newsTitle,
+    .module-pressreleases .NewsItemRow span {
+        width: auto;
+    }
+
+    .module-pressreleases .documents-icon .documents {
+        padding: 0 12px 0 0;
+    }
+
+    .newsTitle .ModuleHeadlineLink {
+        padding-left: 0;
+    }
+}
+
+@media screen and (max-width: 650px) {
+
+    .module-pressreleases .newsTitle {
+        width: 100%;
+    }
+
+    .module-pressreleases .documents-icon {
+        margin: 15px 0 6px;
+    }
+}
+
+/*--------------- News page CSS End ---------------*/
+
+/*--------------- Contact US CSS Start ---------------*/
+
+.contact-page .map {
+    height: 350px;
+    margin: 25px 0 0;
+    width: 100%;
+}
+
+.contact-page .inner-heading h1 {
+    display: block;
+}
+
+.contect-left {
+    background-color: #f7f2e8;
+    min-height: 380px;
+    padding: 20px;
+}
+
+.address-lignheight {
+    line-height: 30px;
+}
+
+.country-name {
+    background-image: url("../icons/canada-icon.png");
+    background-position: 0 5px;
+    background-repeat: no-repeat;
+    color: #444;
+    font-size: 18px;
+    line-height: 24px;
+    margin-bottom: 10px;
+    padding: 5px 0 5px 31px;
+}
+
+.country-name.ghana {
+    background-image: url("../icons/ghana-icon.png");
+}
+
+.country-name.southafrica {
+    background-image: url("../icons/southafrica-icon.png");
+}
+
+.custom-col-right {
+    padding-left: 50px;
+}
+
+@media screen and (max-width: 980px) {
+
+    .contact-right-content .address-lignheight > a {
+        word-wrap: break-word;
+    }
+}
+
+@media screen and (max-width: 776px) {
+
+    .contect-left,
+    .custom-col-right {
+        width: 50%;
+    }
+
+    .custom-col-right .common-header {
+        padding-top: 20px;
+    }
+
+    .custom-col-right {
+        padding-left: 30px;
+    }
+}
+
+@media screen and (max-width: 650px) {
+
+    .contect-left, .custom-col-right {
+        width: 100%;
+    }
+
+    .contactus-list {
+        padding: 0;
+    }
+
+    .module-citizen-reports .ModuleHeadlineLink {
+        width: 75%;
+    }
+}
+/*--------------- Contact US CSS End ---------------*/
+
+
+/*---------------  Legal Notice &  Page Not Found  CSS Start ---------------*/
+
+.PageLegalNotice h4 {
+    font-weight: 400;
+}
+
+.PagePageNotFound ul.SiteMapList li {
+    line-height: 10px;
+}
+
+.PagePageNotFound ul li.SiteMap-Level3 a {
+    padding-left: 10px;
+    font-size: 16px;
+}
+
+.PagePageNotFound ul li.SiteMap-Level4 a {
+    padding-left: 40px;
+    font-size: 14px;
+}
+
+.PaneQ4Footer a {
+    color: #000;
+}
+
+.PaneQ4Footer {
+    color: #000;
+    text-align: center;
+}
+
+/*--------------- Legal Notice &  Page Not Found CSS End ---------------*/
+
+/* SEC Filings CSS Start */
+.module-secfilings .secTable .header {
+    background-color: #c19a5d;
+    color: #fff;
+    font-weight: 600;
+}
+
+.module-secfilings .secWidget .date {
+    width: 20%;
+}
+
+.module-secfilings .secWidget .type {
+    width: 12%;
+}
+
+.module-secfilings .secWidget .desc {
+    width: 25%;
+}
+
+.module-secfilings .secWidget .agent {
+    width: 21%;
+}
+
+.module-secfilings .secWidget .view {
+    width: 17%;
+}
+
+.module-secfilings .secWidget .date, .module-secfilings .secWidget .type,
+.module-secfilings .secWidget .desc, .module-secfilings .secWidget .agent,
+.module-secfilings .secWidget .view {
+    display: inline-block;
+    padding: 10px;
+    line-height: 22px;
+}
+
+.module-secfilings .ModuleItemRow {
+    border-bottom: solid 1px #bd975b;
+}
+
+.module-secfilings .secWidget .itemView a[href*=".rtf"]:before,
+.module-secfilings .secWidget .itemView a[href*=".RTF"]:before,
+.sec-fillings-details a[href*=".rtf"]:before,
+.sec-fillings-details a[href*=".RTF"]:before {
+    content: "\f0f6";
+}
+
+.module-secfilings .secWidget .itemView a[href*=".pdf"]:before,
+.module-secfilings .secWidget .itemView a[href*=".PDF"]:before,
+.sec-fillings-details a[href*=".pdf"]:before,
+.sec-fillings-details a[href*=".PDF"]:before {
+    content: "\f1c1";
+}
+
+.module-secfilings .secWidget .itemView a[href*=".xls"]:before,
+.module-secfilings .secWidget .itemView a[href*=".XLS"]:before,
+.sec-fillings-details a[href*=".xls"]:before,
+.sec-fillings-details a[href*=".XLS"]:before {
+    content: "\f1c3";
+}
+
+.module-secfilings .secWidget .itemView a[href*=".zip"]:before,
+.module-secfilings .secWidget .itemView a[href*=".ZIP"]:before,
+.sec-fillings-details a[href*=".zip"]:before,
+.sec-fillings-details a[href*=".ZIP"]:before {
+    content: "\f1c6";
+}
+
+.module-secfilings .secWidget .itemView a[href*=".html"]:before,
+.module-secfilings .secWidget .itemView a[href*=".HTML"]:before,
+.sec-fillings-details a[href*=".html"]:before,
+.sec-fillings-details a[href*=".HTML"]:before {
+    content: "\f121";
+}
+
+.module-secfilings .secWidget .itemView a:before,
+.sec-fillings-details .Icons a:before {
+    font-family: FontAwesome;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 1;
+    font-size: 24px;
+    padding-right: 10px;
+}
+
+.sec-fillings-details .Icons i,
+.sec-details-page .Breadcrumb .BreadcrumbHomeLink + .BreadcrumbSeparator + a,
+.EventDetailsPage .Breadcrumb .BreadcrumbHomeLink + .BreadcrumbSeparator + a {
+    display: none;
+}
+
+.module-secfilings .secWidget .itemView a {
+    font-size: 0;
+    margin: 0;
+    color: #004d7e;
+}
+
+.sbToggle.sbToggleOpen:before {
+    content: "\f106";
+}
+
+.module-secfilings .secWidget .filter-wrap {
+    padding-bottom: 20px;
+}
+
+.module-secfilings .filter-wrap span:first-child .sbHolder,
+.module-secfilings .filter-wrap span:first-child .sbOptions,
+.module-secfilings .filter-wrap span:first-child .sbSelector {
+    width: 113px;
+}
+
+.module-secfilings .sbSelector {
+    width: 90px;
+}
+
+.module-secfilings .sbHolder {
+    margin: 0 10px 0 0;
+}
+
+.sbToggle {
+    display: block;
+    height: 100%;
+    outline: none;
+    top: 0;
+}
+
+
+.module-secfilings .secWidget .noitemfound {
+    margin-top: 10px;
+    padding-left: 10px;
+    display: block;
+}
+
+.sbToggle, .sbToggle:hover {
+    background-image: none;
+}
+
+.module-secfilings .sbOptions,
+.module-secfilings .sbHolder {
+    width: 120px;
+}
+
+.module-secfilings .itemCont .ModuleItemRow .agent {
+    padding-left: 22px;
+}
+
+.module-secfilings .itemCont .ModuleItemRow .desc {
+    padding-left: 20px;
+}
+
+.module-secfilings .itemCont .ModuleItemRow .type {
+    padding-left: 15px;
+}
+
+.module-secfilings .itemCont .ModuleItemRow .view {
+    padding-left: 30px;
+}
+
+
+.module-secfilings .secWidget .itemView a:hover {
+    color: #ddb208;
+}
+
+.sec-fillings-details .ModuleDate:before,
+.sec-fillings-details span.ModuleForm:before,
+.sec-fillings-details span.ModuleFilingDescription:before,
+.sec-fillings-details .Icons:before {
+    font-weight: 700;
+}
+
+
+.sec-fillings-details .ModuleDate:before {
+    content: "Date: ";
+}
+
+
+.sec-fillings-details span.ModuleForm:before {
+    content: "Form: ";
+}
+
+
+.sec-fillings-details span.ModuleFilingDescription:before {
+    content: "Description: ";
+}
+
+.sec-fillings-details .Icons:before {
+    content: "Download: ";
+}
+
+@media screen and (max-width : 480px) {
+    .module-secfilings .pager-prev, .module-secfilings .pager-next {
+        display: block;
+    }
+}
+
+/* SEC Filings CSS End */
+
+/* PressRelease CSS Start */
+
+.ModulePressReleaseDetails h3.ModuleTitle.ModuleDetailHeadline {
+    color: #004d7e;
+    font-weight: 400;
+}
+
+.ModulePressReleaseDetails .uk-panel-box {
+    padding: 15px;
+    background: #fafafa;
+    color: #444;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.ModulePressReleaseDetails .uk-panel.uk-panel-box.uk-width-small-1-3.uk-align-right {
+    float: right;
+    padding-right: 50px;
+    margin-left: 50px;
+}
+
+.ModulePressReleaseDetails ul.uk-list.uk-list-line li a:before {
+    content: "\f1c1";
+    font-family: FontAwesome;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+}
+
+.ModulePressReleaseDetails .uk-table tr.even, .uk-table-striped tbody tr:nth-of-type(odd) {
+    background: #f7f2e8;
+}
+
+.ModulePressReleaseDetails .uk-table td {
+    padding: 10px;
+}
+
+.ModulePressReleaseDetails .uk-table td,
+.uk-table th {
+    border: 1px solid #000;
+}
+
+.uk-overflow-containers .uk-table td,
+.uk-overflow-containers .uk-table th {
+    border: none;
+    border-bottom: 1px solid #ddd;
+}
+
+.ModulePressReleaseDetails .uk-breadcrumb > li, .uk-pagination > li, .uk-table td {
+    vertical-align: top;
+}
+
+.ModulePressReleaseDetails .uk-list.uk-list-line > li {
+    list-style: outside none none;
+}
+
+.ModulePressReleaseDetails .ModuleDateContainer {
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+}
+
+.ModulePressReleaseDetails .ModuleLinks a {
+    display: none;
+}
+
+.ModulePressReleaseDetails ul li {
+    line-height: 24px;
+    list-style-position: outside;
+    padding-bottom: 8px;
+}
+
+.module-back-to-pressreleases .orange-button {
+    display: none;
+}
+
+.ModulePressReleaseDetails .ModuleDate:before {
+    content: "\f133";
+    font-family: FontAwesome;
+    font-weight: 400;
+    font-style: normal;
+    padding-right: 10px;
+}
+
+.module-pressreleases .mw_release ul {
+    padding-left: 35px;
+}
+
+.module-pressreleases .mw_release ul li ul {
+    padding-left: 20px;
+}
+
+.uk-article ul.uk-list.uk-list-line {
+    padding-top: 10px;
+}
+
+.module-pressreleases .uk-overflow-container,
+.uk-overflow-containers {
+    padding-bottom: 20px;
+}
+/* PressRelease CSS End */
+
+/** jobs page Start **/
+
+.job-page-module h3 {
+    text-transform: uppercase;
+    font-size: 30px;
+    font-weight: 200;
+    line-height: 40px;
+    margin-bottom: 15px;
+}
+
+.aboutus-jobs .color-bg {
+    background: #740034;
+    color: #fff;
+}
+
+.jobs-overview-container .second-section {
+    padding-top: 30px;
+}
+
+.job-page-module .font-module-color, .job-page-module h3 {
+    color: #fff;
+}
+
+.aboutus-jobs .background-bg {
+    background: url('../images/job/working-at-asanko.jpg') no-repeat 50%;
+}
+
+.job-page-module .aboutus-jobs .left-img {
+    background-image: url('../images/job/download.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.job-page-module .fraud-alert {
+    background-color: #909932;
+    padding: 20px;
+    color: #fff;
+    margin: 20px 0;
+}
+
+.job-page-module .fraud-alert h3 {
+    text-transform: capitalize;
+}
+
+.aboutus-jobs .color-gold {
+    background-color: #909932;
+}
+
+.aboutus-jobs .left-img a,
+.job-page-module .fraud-alert a {
+    color: #fff;
+    font-weight: 600;
+}
+
+.aboutus-jobs .left-img a:hover,
+.job-page-module .fraud-alert a:hover {
+    color: #8dcaff;
+}
+
+.aboutus-jobs .color-gold a {
+    color: #e1e6b1;
+}
+
+.aboutus-jobs .color-gold a:hover {
+    color: #FFF;
+}
+
+.jobs-content.color-gold {
+    border-left: 10px solid #fff;
+    padding: 0;
+}
+
+.jobs-content.left-img {
+    border-right: 10px solid #fff;
+}
+
+.aboutus-jobs .background-bg,
+.aboutus-jobs .jobs-content {
+    display: table-cell;
+}
+
+.jobs_banner .JobPostingContainer .JobPostingGridHeader {
+    background: #c19a5d;
+    color: #fff;
+    font-weight: 600;
+}
+
+.jobs_banner .JobPostingContainer .ModuleTitle {
+    padding-top: 40px;
+}
+
+.jobs_banner .JobPostingContainer table .JobPostingGridItem:nth-child(even) {
+    background: #f7f2e8;
+}
+
+.JobPostingContainer table tr.JobPostingGridItem {
+    border-bottom: 1px solid #c19a5d;
+}
+
+
+.jobs_banner .JobPostingContainer table .JobPostingGridItem:nth-child(odd) {
+    background-color: #fff;
+}
+
+.jobs_banner .JobPostingContainer {
+    display: block;
+}
+
+/** jobs page End **/
+
+/** Events Details Start **/
+
+.module-event-details i.external-link:before {
+    content: "\f08e";
+    font-family: FontAwesome;
+    font-size: 150%;
+    vertical-align: middle;
+}
+
+.module-event-details i.external-link:after {
+    content: "View the Link";
+    padding-left: 10px;
+}
+
+.module-event-details .q4i-doc-pdf:before {
+    content: "\f1c1";
+    font-family: FontAwesome !important;
+    font-size: 150%;
+    padding-right: 15px;
+}
+
+.module-event-details .ModuleContainerInner {
+    line-height: 40px;
+}
+
+.module-table-width .uk-overflow-container,
+.uk-overflow-containers {
+    overflow-x: auto;
+}
+
+/** Events Details End **/
+
+
+/*Email Alert Page CSS Starts*/
+
+.module-email-unsub-content {
+    margin-top: 40px;
+}
+
+.module-email-subscribe .MailingListsHeading {
+    display: inline-block;
+    margin: 5px 0;
+}
+
+.MailingListForm.module-email-subscribe table input[type="text"],
+.module-email-unsubscribe.MailingListUnsubscribeContainer table input[type="text"] {
+    width: 90%;
+}
+
+.MailingListForm.module-email-subscribe .MailingListCol1 {
+    margin: 0 0 5px;
+}
+
+.module-email-subscribe .error-container > li {
+    font-size: 16px;
+}
+
+.page-subscribe .inner-heading {
+    display: none;
+}
+
+.page-subscribe .EditSubscriberConfirmation {
+    color: green;
+}
+
+/*Email Alert Page CSS Ends*/
+
+/** Investor-response-k2 **/
+
+.content-notes-section {
+    padding-top: 30px;
+}
+
+.response-k .HtmlTextContainer {
+    word-wrap: break-word;
+}
+
+.response-k .HtmlTextContainer ul {
+    margin: 8px 0 15px 30px;
+}
+
+.response-k .HtmlTextContainer ul li ul {
+    list-style-type: circle;
+    line-height: 26px;
+}
+
+.response-k .HtmlTextContainer td,
+.response-k .HtmlTextContainer th {
+    vertical-align: top;
+}
+
+
+/** Investor-response-k2-end **/
+
+.module-event-details .q4i-doc-pdf,
+.module-event-details .i.external-link {
+    font-size: 14px;
+    display: inline-block !important;
+}
+
+.legal-notice .innerpage-banner {
+    background-image: url("../images/job/banner-6.jpg");
+}
+
+@media (min-width: 1024px) {
+    .mobile-Links {
+        cursor: text;
+        pointer-events: none;
+    }
+}
+
+
+@media (max-width: 980px) {
+    .ModulePressReleaseDetails .uk-overflow-container,
+    .uk-overflow-containers {
+        overflow-x: auto;
+    }
+
+
+    .ModulePressReleaseDetails .uk-table {
+        width: 670px !important;
+    }
+}
+
+
+@media screen and (max-width: 650px) {
+    .module-secfilings .secWidget .header {
+        display: none;
+    }
+
+    .module-secfilings .secWidget .date, .module-secfilings .secWidget .type,
+    .module-secfilings .secWidget .desc, .module-secfilings .secWidget .agent,
+    .module-secfilings .secWidget .view {
+        display: block;
+        width: 100%;
+        border: solid 1px #5a6f7f;
+    }
+
+
+    .module-secfilings .secWidget .itemView .docs:before {
+        line-height: 30px;
+        content: "Downloads:";
+    }
+
+
+    .module-secfilings .secWidget .ModuleItemRow {
+        display: inline-block !important;
+        width: 100%;
+        border: solid 1px #bd975b;
+        margin-bottom: 20px;
+    }
+
+    .module-secfilings .secWidget .ModuleItemRow div:before {
+        display: block;
+        float: left;
+        width: 130px;
+        height: 30px;
+        font-weight: 600;
+    }
+
+    .module-secfilings .secWidget .itemDate:before {
+        content: "Filing Date:";
+    }
+
+    .module-secfilings .secWidget .itemType:before {
+        content: "Form:";
+    }
+
+    .module-secfilings .secWidget .itemDesc:before {
+        content: "Description:";
+    }
+
+    .module-secfilings .secWidget .itemAgent:before {
+        content: "Filing Group:";
+    }
+
+    .aboutus-jobs .background-bg, .aboutus-jobs .jobs-content {
+        display: block;
+        width: 100%;
+    }
+
+    .jobs-content.left-img,
+    .jobs-content.color-gold {
+        border: 0 none;
+    }
+
+    .aboutus-jobs .background-bg {
+        min-height: 300px;
+    }
+
+    .module-secfilings .itemCont .ModuleItemRow .agent,
+    .module-secfilings .itemCont .ModuleItemRow .desc,
+    .module-secfilings .itemCont .ModuleItemRow .type,
+    .module-secfilings .itemCont .ModuleItemRow .view {
+        padding-left: 10px;
+    }
+
+    .module-secfilings.col, .regulatory-filings {
+        padding-left: 0;
+    }
+
+    .jobs-overview-container .second-section {
+        padding-top: 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    .ModulePressReleaseDetails .uk-panel.uk-panel-box.uk-width-small-1-3.uk-align-right {
+        float: none;
+        margin-left: 0;
+    }
+
+    .jobs-overview-container .second-section {
+        padding-left: 0;
+    }
+
+    .regulatory-filings a {
+        word-wrap: break-word;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .module-secfilings .secWidget .ModuleItemRow div:before {
+        display: block;
+        float: none;
+    }
+}
+
+
+/*----------------------AGM Download Widget------------------------*/
+.agm-materials-reports .q4_download_container {
+    display: block;
+}
+
+.agm-materials-reports .q4_download_container:first-child {
+    display: block;
+}
+
+.agm-materials-reports .q4_download_container:first-child {
+    padding: 0;
+}
+
+.agm-materials-reports .q4_download_container {
+    padding: 15px 0 0;
+}
+
+.agm-materials-reports .q4-year-container .q4-year-text {
+    background-color: #dfdfdf;
+    color: #004d7e;
+    cursor: pointer;
+    font-weight: 400;
+    padding: 8px 15px;
+}
+
+.agm-materials-reports .q4-year-container span {
+    display: inline-block;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 5px;
+    background-color: transparent;
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.agm-materials-reports .q4_download_widget .q4-items-container {
+    padding: 0 0 15px 15px;
+    display: none;
+}
+
+.agm-materials-reports .q4-download-item {
+    border: 0 none;
+    margin: 10px 0 0;
+    padding: 0;
+}
+
+.agm-materials-reports .q4-year-container .q4-year-text i {
+    float: right;
+}
+
+.agm-materials-reports .q4-year-container i {
+    margin-left: 10px;
+}
+
+.agm-materials-reports .q4_download_container.active .q4i-block-plus:before {
+    content: "\e604" !important;
+}
+
+.agm-materials-reports .q4i-block-plus:before {
+    content: "\e605" !important;
+}
+/*----------------------AGM Ends------------------------*/
+
+/*---------------------------------------------*/
+.events-module .ModuleItemRow .events-date {
+    width: 20%;
+} 
+.events-module .ModuleItemRow .events-information {
+    width: 45.6%;
+}
+
+.fancy-disclaimer_content p {
+    margin: 8px 0;
+    font-size: 12px;
+}
+.fancy-disclaimer_content h2 {
+    font-size: 20px;
+}
+.fancy-disclaimer_content .fancy-disclaimer_link-container {
+    text-align: center;
+}
+
+.top-shareholder {
+    margin-bottom: 20px;
+}
+
+.top-shareholder .table-content td {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+
+.reserves-resources li:before { 
+   content: "-"; 
+   padding-right:10px; 
+}
+.reserves-resources  ul {
+    line-height: 26px;
+    list-style-type: none;
+    margin: 5px 0 15px 30px;
+}
